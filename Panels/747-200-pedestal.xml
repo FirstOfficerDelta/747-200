@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 pedestal panel
+
+
+WARNING : a button not working by click, means that it is too close of another button (eventually hidden);
+even if both click areas (ctrl-C) don't overlap. Changing internal geometry of button avoids this drawback.
+
+
+_______________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>747-200 Pedestal Panel</name>
+ <background>Aircraft/747-200/Panels/Textures/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>512</h>
+ <y-offset>0</y-offset>
+ <view-height>500</view-height>
+
+ <instruments>
+
+  <instrument include="Aircraft/Instruments/brakes.xml">
+   <name>Brake Indicator Light</name>
+   <x>105</x>
+   <y>740</y>
+   <w>40</w>
+   <h>17</h>
+  </instrument>
+
+<!-- RADIO -->
+
+  <instrument include="Aircraft/Instruments/navcom-kx155.xml">
+   <name>NavCom 1 Radio</name>
+   <x>180</x>
+   <y>431</y>
+  </instrument>
+
+  <instrument include="Aircraft/Instruments/navcom-kx155.xml">
+   <name>NavCom 2 Radio</name>
+   <params>
+    <comm-freq-selected-prop>/instrumentation/comm[1]/frequencies/selected-mhz</comm-freq-selected-prop>
+    <comm-freq-standby-prop>/instrumentation/comm[1]/frequencies/standby-mhz</comm-freq-standby-prop>
+    <nav-freq-selected-prop>/instrumentation/nav[1]/frequencies/selected-mhz</nav-freq-selected-prop>
+    <nav-freq-standby-prop>/instrumentation/nav[1]/frequencies/standby-mhz</nav-freq-standby-prop>
+    <nav-morse-id-volume-prop>/instrumentation/nav[1]/volume</nav-morse-id-volume-prop>
+    <nav-morse-ident-toggle-prop>/instrumentation/nav[1]/ident</nav-morse-ident-toggle-prop>
+   </params>
+   <x>180</x>
+   <y>345</y>
+  </instrument>
+
+  <instrument include="Aircraft/Instruments/adf-radio.xml">
+   <name>ADF Radio</name>
+   <params>
+    <adf-freq-selected-prop>/instrumentation/adf[0]/frequencies/selected-khz</adf-freq-selected-prop>
+    <adf-freq-standby-prop>/instrumentation/adf[1]/frequencies/selected-khz</adf-freq-standby-prop>
+    <adf-morse-id-volume-prop>/instrumentation/adf[0]/volume-norm</adf-morse-id-volume-prop>
+    <adf-morse-ident-toggle-prop>/instrumentation/adf[0]/ident-audible</adf-morse-ident-toggle-prop>
+   </params>
+   <x>180</x>
+   <y>271</y>
+  </instrument>
+
+<!-- TRIM -->
+
+  <instrument include="Aircraft/Instruments/controls.xml">
+   <name>Control Position Indicators</name>
+   <x>340</x>
+   <y>0</y>
+   <w>150</w>
+   <h>150</h>
+  </instrument>
+
+ </instruments>
+
+</PropertyList>

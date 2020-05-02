@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 tanks :
+
+     - typical quantities (52,340 US gal) + extended range fuel (2,048 US gal) spread on reserve tanks.
+     - 1 US gal = 6.7 lb !
+-->
+
+
+<PropertyList>
+
+<!-- center wing -->
+
+  <tank n="0">
+   <capacity-gal_us>17160.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>C</name>
+  </tank>
+
+<!-- main -->
+
+  <tank n="1">
+   <capacity-gal_us>4490.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>1</name>
+  </tank>
+  <tank n="2">
+   <capacity-gal_us>12570.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>2</name>
+  </tank>
+  <tank n="3">
+   <capacity-gal_us>12570.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>3</name>
+  </tank>
+  <tank n="4">
+   <capacity-gal_us>4490.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>4</name>
+  </tank>
+
+<!-- reserve -->
+
+  <tank n="5">
+   <capacity-gal_us>1554.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>R1</name>
+  </tank>
+  <tank n="6">
+   <capacity-gal_us>1554.0</capacity-gal_us>
+   <density-ppg>6.7</density-ppg>
+   <name>R4</name>
+  </tank>
+
+</PropertyList>

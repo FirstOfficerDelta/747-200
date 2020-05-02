@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 copilot panel :
+
+     avoids early swap.
+
+
+WARNING : a button not working by click, means that it is too close of another button (eventually hidden);
+even if both click areas (ctrl-C) don't overlap. Changing internal geometry of button avoids this drawback.
+
+_______________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+
+-->
+
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>747-200 copilot Panel</name>
+ <background>Aircraft/747-200/Panels/Textures/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>512</h>
+ <y-offset>0</y-offset>
+ <view-height>500</view-height>
+
+ <instruments>
+
+  <instrument include="Instruments/747-ap-annunciator.xml">
+   <name>Autopilot annunciator</name>
+   <x>35</x>
+   <y>300</y>
+   <w>20</w>
+   <h>53.5</h>
+  </instrument>
+
+  <instrument include="Instruments/747-at-annunciator.xml">
+   <name>Autothrottle annunciator</name>
+   <x>65</x>
+   <y>300</y>
+   <w>20</w>
+   <h>53.5</h>
+  </instrument>
+
+<!-- 2nd line -->
+
+  <instrument include="Aircraft/Instruments/clock.xml">
+   <name>Chronometer</name>
+   <x>-20</x>
+   <y>250</y>
+   <w>65</w>
+   <h>65</h>
+  </instrument>
+
+  <instrument include="Instruments/747-asi.xml">
+   <name>Indicated air speed</name>
+   <x>65</x>
+   <y>255</y>
+   <w>75</w>
+   <h>75</h>
+  </instrument>
+
+  <instrument include="Instruments/747-horizon.xml">
+   <name>Attitude Indicator</name>
+   <x>160</x>
+   <y>260</y>
+   <w>80</w>
+   <h>80</h>
+  </instrument>
+
+  <instrument include="Instruments/747-altimeter.xml">
+   <name>Altimeter</name>
+   <x>250</x>
+   <y>250</y>
+   <w>65</w>
+   <h>65</h>
+  </instrument>
+
+  <instrument include="Instruments/747-radio-alt.xml">
+   <name>Radio altimeter</name>
+   <x>335</x>
+   <y>245</y>
+   <w>85</w>
+   <h>85</h>
+  </instrument>
+
+  <instrument include="Instruments/747-markerbeacon.xml">
+   <name>Marker beacon lights</name>
+   <x>370</x>
+   <y>245</y>
+   <w>14</w>
+   <h>49</h>
+  </instrument>
+
+<!-- 3rd line -->
+
+  <instrument include="Instruments/747-rmi.xml">
+   <name>Radio Magnetic Indicator</name>
+   <x>65</x>
+   <y>155</y>
+   <w>65</w>
+   <h>97.5</h>
+  </instrument>
+
+  <instrument include="Instruments/747-hsi.xml">
+   <name>Horizontal Situation Indicator</name>
+   <x>160</x>
+   <y>155</y>
+   <w>75</w>
+   <h>112.5</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tcas.xml">
+   <name>Vertical speed</name>
+   <x>250</x>
+   <y>175</y>
+   <w>72</w>
+   <h>72</h>
+  </instrument>
+
+  <instrument include="Instruments/747-adf.xml">
+   <name>ADF</name>
+   <x>325</x>
+   <y>175</y>
+   <w>65</w>
+   <h>65</h>
+  </instrument>
+
+ </instruments>
+
+</PropertyList>

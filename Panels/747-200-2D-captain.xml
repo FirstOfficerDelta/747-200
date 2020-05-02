@@ -1,0 +1,352 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 2D panel (CAPTAIN)
+
+
+WARNING : a button not working by click, means that it is too close of another button (eventually hidden);
+even if both click areas (ctrl-C) don't overlap. Changing internal geometry of button avoids this drawback.
+
+_______________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+
+-->
+
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>747-200 2D Captain Panel</name>
+ <background>Aircraft/747-200/Panels/Textures/747-200-panel-bg.rgb</background>
+ <w>1140</w>
+ <h>470</h>
+ <y-offset>0</y-offset>
+ <view-height>500</view-height>
+
+ <instruments>
+
+<!-- AUTOPILOT -->
+
+  <instrument include="Instruments/747-ap-vhf-nav.xml">
+   <name>NAV 1 dial</name>
+   <params>
+    <frq-disp>/instrumentation/nav[0]/frequencies/selected-mhz</frq-disp>
+    <frq-ctrl>/instrumentation/nav[0]/frequencies/selected-mhz</frq-ctrl>
+   </params>
+   <x>130</x>
+   <y>410</y>
+   <w>120</w>
+   <h>120</h>
+  </instrument>
+
+  <instrument include="Instruments/747-hsi-source.xml">
+   <name>HSI source</name>
+   <x>220</x>
+   <y>435</y>
+   <w>44</w>
+   <h>58</h>
+  </instrument>
+
+  <instrument include="Instruments/747-at-speed-kt.xml">
+   <name>autothrottle speed</name>
+   <x>315</x>
+   <y>410</y>
+   <w>100</w>
+   <h>100</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-course-deg.xml">
+   <name>course</name>
+   <x>505</x>
+   <y>410</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-vertical-speed-fpm.xml">
+   <name>vertical speed</name>
+   <x>705</x>
+   <y>370</y>
+   <w>50</w>
+   <h>200</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-vertical.xml">
+   <name>vertical mode</name>
+   <x>830</x>
+   <y>435</y>
+   <w>180</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-vhf-nav.xml">
+   <name>NAV 2 dial</name>
+   <params>
+    <frq-disp>/instrumentation/nav[1]/frequencies/selected-mhz</frq-disp>
+    <frq-ctrl>/instrumentation/nav[1]/frequencies/selected-mhz</frq-ctrl>
+   </params>
+   <x>970</x>
+   <y>410</y>
+   <w>120</w>
+   <h>120</h>
+  </instrument>
+
+<!-- line 2 -->
+
+  <instrument include="Instruments/747-at-engage.xml">
+   <name>autothrottle switch</name>
+   <x>325</x>
+   <y>350</y>
+   <w>70</w>
+   <h>70</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-engage.xml">
+   <name>autopilot switch</name>
+   <x>425</x>
+   <y>375</y>
+   <w>100</w>
+   <h>100</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-heading-deg.xml">
+   <name>heading</name>
+   <x>505</x>
+   <y>330</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-horizontal.xml">
+   <name>horizontal mode</name>
+   <x>610</x>
+   <y>345</y>
+   <w>180</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-altitude-ft.xml">
+   <name>altitude select</name>
+   <x>770</x>
+   <y>330</y>
+   <w>75</w>
+   <h>113</h>
+  </instrument>
+
+  <instrument include="Instruments/747-ap-altitude.xml">
+   <name>altitude switch</name>
+   <x>875</x>
+   <y>350</y>
+   <w>120</w>
+   <h>80</h>
+  </instrument>
+
+<!-- CAPTAIN -->
+
+  <instrument include="Instruments/747-ap-annunciator.xml">
+   <name>Autopilot annunciator</name>
+   <x>815</x>
+   <y>240</y>
+   <w>40</w>
+   <h>107</h>
+  </instrument>
+
+  <instrument include="Instruments/747-at-annunciator.xml">
+   <name>Autothrottle annunciator</name>
+   <x>865</x>
+   <y>240</y>
+   <w>40</w>
+   <h>107</h>
+  </instrument>
+
+  <instrument include="Instruments/747-markerbeacon.xml">
+   <name>Marker beacon lights</name>
+   <x>925</x>
+   <y>255</y>
+   <w>28</w>
+   <h>98</h>
+  </instrument>
+
+  <instrument include="Instruments/747-amber-cargo-doors.xml">
+   <name>Cargo door warning</name>
+   <x>940</x>
+   <y>355</y>
+   <w>40</w>
+   <h>20</h>
+  </instrument>
+
+  <instrument include="Instruments/747-red-pull-up.xml">
+   <name>Terrain warning</name>
+   <x>995</x>
+   <y>355</y>
+   <w>40</w>
+   <h>20</h>
+  </instrument>
+
+<!-- 2nd line -->
+
+  <instrument include="Aircraft/Instruments/clock.xml">
+   <name>Chronometer</name>
+   <x>50</x>
+   <y>215</y>
+   <w>110</w>
+   <h>110</h>
+  </instrument>
+
+  <instrument include="Instruments/747-asi.xml">
+   <name>Indicated air speed</name>
+   <x>190</x>
+   <y>245</y>
+   <w>150</w>
+   <h>150</h>
+  </instrument>
+
+  <instrument include="Instruments/747-horizon.xml">
+   <name>Attitude Indicator</name>
+   <x>370</x>
+   <y>250</y>
+   <w>160</w>
+   <h>160</h>
+  </instrument>
+
+  <instrument include="Instruments/747-altimeter.xml">
+   <name>Altimeter</name>
+   <x>545</x>
+   <y>235</y>
+   <w>130</w>
+   <h>130</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tcas.xml">
+   <name>Vertical speed</name>
+   <x>700</x>
+   <y>235</y>
+   <w>140</w>
+   <h>140</h>
+  </instrument>
+
+<!-- 3rd line -->
+
+  <instrument include="Instruments/747-rmi.xml">
+   <name>Radio Magnetic Indicator</name>
+   <x>190</x>
+   <y>70</y>
+   <w>130</w>
+   <h>195</h>
+  </instrument>
+
+  <instrument include="Instruments/747-hsi.xml">
+   <name>Horizontal Situation Indicator</name>
+   <x>370</x>
+   <y>70</y>
+   <w>150</w>
+   <h>225</h>
+  </instrument>
+
+  <instrument include="Instruments/747-radio-alt.xml">
+   <name>Radio altimeter</name>
+   <x>570</x>
+   <y>75</y>
+   <w>170</w>
+   <h>170</h>
+  </instrument>
+
+  <instrument include="Instruments/747-adf.xml">
+   <name>ADF</name>
+   <x>700</x>
+   <y>85</y>
+   <w>130</w>
+   <h>130</h>
+  </instrument>
+
+<!-- CENTER -->
+
+  <instrument include="Instruments/747-flaps-limit.xml">
+   <name>Flaps limit</name>
+   <x>860</x>
+   <y>160</y>
+   <w>180</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-flaps-position.xml">
+   <name>Flaps position</name>
+   <x>870</x>
+   <y>60</y>
+   <w>100</w>
+   <h>100</h>
+  </instrument>
+
+  <instrument include="Aircraft/Instruments/gear-indicator.xml">
+   <name>Gear Indicator Light</name>
+   <x>990</x>
+   <y>300</y>
+   <w>40</w>
+   <h>17</h>
+  </instrument>
+
+  <instrument include="Instruments/747-flaps.xml">
+   <name>Flaps lever</name>
+   <params>
+    <flaps-select>/controls/flight/flaps</flaps-select>
+   </params>
+   <x>990</x>
+   <y>220</y>
+   <w>40</w>
+   <h>80</h>
+  </instrument>
+
+<!-- PEDESTAL -->
+
+  <instrument include="Aircraft/Instruments/brakes.xml">
+   <name>Brake Indicator Light</name>
+   <x>990</x>
+   <y>130</y>
+   <w>40</w>
+   <h>17</h>
+  </instrument>
+
+  <instrument include="Instruments/747-spoilers.xml">
+   <name>Spoilers indicator</name>
+   <params>
+    <spoilers-select>/controls/flight/spoilers</spoilers-select>
+   </params>
+   <x>990</x>
+   <y>50</y>
+   <w>40</w>
+   <h>80</h>
+  </instrument>
+
+<!-- OVERHEAD PANEL -->
+
+  <instrument include="Aircraft/Instruments/magcompass.xml">
+   <name>Magnetic Compass</name>
+   <x>940</x>
+   <y>485</y>
+  </instrument>
+
+ </instruments>
+
+</PropertyList>

@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 engineer fuel panel
+
+
+WARNING : a button not working by click, means that it is too close of another button (eventually hidden);
+even if both click areas (ctrl-C) don't overlap. Changing internal geometry of button avoids this drawback.
+
+
+_______________________________________________________________________
+
+This is a panel configuration file for the open-source flight
+simulator FlightGear (www.flightgear.org).  The file is an XML-encoded
+FlightGear property list defining the panel's background texture and
+the location (and optionally, size) of the instruments that will
+appear on the panel.
+
+Each instrument is, itself, defined in an XML-encoded property list
+in a separate file.
+
+Co-ordinates are relative to the *bottom* left corner of the screen
+(as in OpenGL).  The total FlightGear window is always considered to
+be 1024x768, whatever its actual display size on the screen.  All
+paths are relative to $FG_ROOT.
+
+Note that the name of the element defining each instrument must be
+different, or else instrument definitions will be overwritten:
+that's not particularly XML-ish, but that's how property lists
+work in FlightGear right now.
+
+Each instrument has its own preferred width and height, but you can
+override those by providing <w>..</w> and <h>..</h> properties with the
+<x>...</x> and <y>...</y> properties.
+
+-->
+
+<!DOCTYPE PropertyList SYSTEM "panel.dtd">
+
+<PropertyList>
+
+ <name>747-200 Engineer Fuel Panel</name>
+ <background>Aircraft/747-200/Panels/Textures/transparent-bg.rgb</background>
+ <w>1024</w>
+ <h>512</h>
+ <y-offset>0</y-offset>
+ <view-height>500</view-height>
+
+ <instruments>
+
+  <instrument include="Instruments/747-tank-center.xml">
+   <name>Center wing tank</name>
+   <x>520</x>
+   <y>330</y>
+   <w>90</w>
+   <h>126</h>
+  </instrument>
+
+<!-- line 2 -->
+
+  <instrument include="Instruments/747-tank-reserve.xml">
+   <name>Reserve 1 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[5]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[5]/name</name>
+   </params>
+   <x>130</x>
+   <y>205</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tank-reserve.xml">
+   <name>Reserve 4 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[6]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[6]/name</name>
+   </params>
+   <x>930</x>
+   <y>205</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+<!-- line 1 -->
+
+  <instrument include="Instruments/747-tank-main.xml">
+   <name>Main 1 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[1]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[1]/name</name>
+   </params>
+   <x>280</x>
+   <y>60</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tank-main.xml">
+   <name>Main 2 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[2]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[2]/name</name>
+   </params>
+   <x>440</x>
+   <y>60</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tank-main.xml">
+   <name>Main 3 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[3]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[3]/name</name>
+   </params>
+   <x>620</x>
+   <y>60</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+  <instrument include="Instruments/747-tank-main.xml">
+   <name>Main 4 tank</name>
+   <params>
+    <level-select>/consumables/fuel/tank[4]/level-gal_us</level-select>
+    <name>/consumables/fuel/tank[4]/name</name>
+   </params>
+   <x>780</x>
+   <y>60</y>
+   <w>198</w>
+   <h>90</h>
+  </instrument>
+
+ </instruments>
+
+</PropertyList>

@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<!-- - creates  booleans (impossible with Nasal), which would otherwise be empty strings by default.
+     - makes more readable the initialization state.
+-->
+
+<PropertyList>
+
+  <audio>
+   <adf n="0">
+    <knob n="0" type="double">0.0</knob>                      <!-- 3D instrument -->
+    <knob n="1" type="double">0.0</knob>
+    <knob n="2" type="double">0.0</knob>
+   </adf>
+   <adf n="1">
+    <knob n="0" type="double">0.0</knob>                      <!-- 3D instrument -->
+    <knob n="1" type="double">0.0</knob>
+    <knob n="2" type="double">0.0</knob>
+   </adf>
+   <comm n="0">
+    <knob n="0" type="double">0.0</knob>                      <!-- 3D instrument -->
+    <knob n="1" type="double">0.0</knob>
+    <selected type="bool">true</selected>
+    <standby type="bool">false</standby>
+   </comm>
+   <comm n="1">
+    <knob n="0" type="double">0.0</knob>                      <!-- 3D instrument -->
+    <knob n="1" type="double">0.0</knob>
+    <selected type="bool">true</selected>
+    <standby type="bool">false</standby>
+   </comm>
+  </audio>
+
+  <autoflight>
+   <altitude></altitude>
+   <automach-ft type="double">28000.0</automach-ft>
+   <autopilot n="0">
+    <engage type="bool">false</engage>
+   </autopilot>
+   <autothrottle-engage type="bool">false</autothrottle-engage>
+   <dial-altitude-ft type="double">10000.0</dial-altitude-ft>
+   <dial-heading-deg type="double">283.0</dial-heading-deg>
+   <dial-mach type="double">0.84</dial-mach>
+   <dial-speed-kt type="double">250.0</dial-speed-kt>
+   <fg-waypoint type="bool">true</fg-waypoint>                                     <!-- default FG behaviour -->
+   <heading></heading>
+   <horizontal-selector type="int">-1</horizontal-selector>                        <!-- magnetic heading -->
+   <real-nav type="bool">true</real-nav>
+   <vertical></vertical>
+   <vertical-selector type="int">-1</vertical-selector>                            <!-- off -->
+  </autoflight>
+
+  <crew>
+   <clock type="bool">false</clock>
+   <steering>
+    <pedal type="bool">false</pedal>
+    <wheel alias="/fdm/jsbsim/systems/NWS/engaged"/>
+   </steering>
+   <timeout type="bool">true</timeout>                                             <!-- of 10 seconds -->
+   <timeout-s type="double">10.0</timeout-s>
+  </crew>
+
+  <doors>
+   <cargo>
+    <aft>
+     <position-norm type="double">0.0</position-norm>
+    </aft>
+    <forward>
+     <position-norm type="double">0.0</position-norm>
+    </forward>
+    <position-norm type="double">0.0</position-norm>
+   </cargo>
+  </doors>
+
+  <engineer>
+   <destination-ft type="int">0</destination-ft>
+  </engineer>
+
+  <engines>
+   <engine n="0">
+    <throttle-manual>0.0</throttle-manual>                                         <!-- differentiate autothrottle -->
+   </engine>
+   <engine n="1">
+    <throttle-manual>0.0</throttle-manual>
+   </engine>
+   <engine n="2">
+    <throttle-manual>0.0</throttle-manual>
+   </engine>
+   <engine n="3">
+    <throttle-manual>0.0</throttle-manual>
+   </engine>
+  </engines>
+
+  <environment>
+   <contrails type="bool">true</contrails>
+  </environment>
+
+  <fuel>
+   <reinit type="bool">true</reinit>                                               <!-- restore fuel on reinit -->
+  </fuel>
+
+  <flight>
+   <spoilers-lever type="double">0.0</spoilers-lever>
+  </flight>
+
+  <gear>
+   <brake-steering type="bool">false</brake-steering>
+  </gear>
+      
+  <seat>
+   <arm>
+    <captain type="bool">false</captain>
+    <copilot type="bool">false</copilot>
+   </arm>
+   <floating>
+    <fast type="bool">false</fast>
+    <recover type="bool">false</recover>
+    <slow type="bool">true</slow>
+   </floating>
+  </seat>
+
+  <tractor>
+   <distance-m type="double">-50.0</distance-m>
+   <pushback type="bool">false</pushback>
+  </tractor>
+
+</PropertyList>

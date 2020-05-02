@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<!-- no interface for leading edge flaps.  -->
+
+<PropertyList>
+
+  <LE-flap-pos-norm alias="/fdm/jsbsim/fcs/LE-flap-pos-norm"/>
+
+</PropertyList>

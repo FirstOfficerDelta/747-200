@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <locks>
+   <route-manager>
+    <wp-last>
+     <dist></dist>
+     <id></id>
+    </wp-last>
+   </route-manager>
+   <speed></speed>                                   <!-- to be known by props.setAll -->
+  </locks>
+
+</PropertyList>
