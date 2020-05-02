@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <default>
+   <menu n="3">
+			<item n="0">
+           			<label>Autopilot Dialog</label>
+            			<binding>
+             			 <command>nasal</command>
+              			<script>var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/747-200/Dialogs/it-autoflight-dlg.xml");
+                             ap_dialog.open();</script>
+            		</binding>
+        	  	</item>
+		    </menu>
+   <menu n="10">
+     <label>747-200</label>
+      <enabled type="bool">true</enabled>
+			<item>
+           			<label>Autopilot Dialog</label>
+            			<binding>
+             			 <command>nasal</command>
+              			<script>var ap_dialog = gui.Dialog.new("sim/gui/dialogs/ap_dialog/dialog", "Aircraft/747-200/Dialogs/it-autoflight-dlg.xml");
+                             ap_dialog.open();</script>
+            		</binding>
+        	  	</item>
+      <item>
+       <label>Environment</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-environment</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>Navigation</label>
+       <key>F4</key>
+       <binding>
+        <command>nasal</command>
+        <script>globals.Boeing747.menuscreen.navigationexport()</script>
+       </binding>
+      </item>
+      <item>
+       <label>Select Livery</label>
+       <binding>
+        <command>nasal</command>
+        <script>aircraft.livery.dialog.toggle()</script>
+       </binding>
+      </item>
+      <item>
+       <label>Views</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-views</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>--- Equipment ---</label>
+       <enabled>false</enabled>
+      </item>
+      <item>
+       <label>Crew</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-crew</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>Fuel</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-fuel</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>Radio</label>
+       <key>F12</key>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-radios</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>--- Parking ---</label>
+       <enabled>false</enabled>
+      </item>
+      <item>
+       <label>Ground</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>747-200-ground</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>Pushback</label>
+       <binding>
+        <command>dialog-show</command>
+        <dialog-name>pushback</dialog-name>
+       </binding>
+      </item>
+      <item>
+       <label>--- Help ---</label>
+       <enabled>false</enabled>
+      </item>
+      <item>
+       <label>Flight keys</label>
+       <key>?</key>
+       <binding>
+        <command>nasal</command>
+        <script>gui.showHelpDialog("/sim/help", 1)</script>
+       </binding>
+      </item>
+      <item>
+       <label>Other keys</label>
+       <key>F8</key>
+       <binding>
+        <command>nasal</command>
+        <script>gui.showHelpDialog("/sim/help/Boeing747", 1)</script>
+       </binding>
+      </item>
+   </menu>
+  </default>
+
+</PropertyList>
