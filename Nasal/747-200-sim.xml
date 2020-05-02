@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!-- sim initialization -->
+
+<PropertyList include="747-200-views.xml">
+
+  <!-- makes correspond the angles, because JSBSim wants normalized value. -->
+    
+  <flaps>
+   <setting>0.000</setting>
+   <setting>0.000</setting> <!-- Flaps  1: 66% slats only at this detent -->
+   <setting>0.167</setting> <!-- Flaps  5: 100% slats -->
+   <setting>0.333</setting> <!-- Flaps 10: takeoff -->
+   <setting>0.667</setting> <!-- Flaps 20: takeoff, go-around -->
+   <setting>0.833</setting> <!-- Flaps 25: landing -->
+   <setting>1.000</setting> <!-- Flaps 30: landing -->
+  </flaps>
+
+  <gui>
+   <dialogs>
+    <Boeing747></Boeing747>             <!-- path creation for nasal -->
+   </dialogs>
+  </gui>
+
+  <spoilers>
+   <setting>0.000</setting> <!-- flight -->
+   <setting>0.000</setting> <!-- detent -->
+   <setting>1.000</setting> <!-- up -->
+  </spoilers>
+
+  <!-- uses slats as leading edge flaps -->
+
+  <slats>
+   <setting>0.000</setting>
+   <setting>0.667</setting>
+   <setting>1.000</setting>
+  </slats>
+
+</PropertyList>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+   <name type="string" n="0">takeoff</name>
+
+   <overlay>
+    <controls>
+     <gear>
+      <brake-parking type="double">1.0</brake-parking>
+     </gear>
+    </controls>
+   </overlay>
+
+</PropertyList>

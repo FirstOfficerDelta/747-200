@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+   <name type="string" n="0">parking</name>
+
+   <overlay>
+    <controls>
+     <engines>
+      <engine n="0">
+       <cutoff type="bool">true</cutoff>
+      </engine>
+      <engine n="1">
+       <cutoff type="bool">true</cutoff>
+      </engine>
+      <engine n="2">
+       <cutoff type="bool">true</cutoff>
+      </engine>
+      <engine n="3">
+       <cutoff type="bool">true</cutoff>
+      </engine>
+     </engines>
+    </controls>
+   </overlay>
+
+</PropertyList>

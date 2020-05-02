@@ -1,0 +1,395 @@
+<?xml version="1.0"?>
+
+<!-- - gear and flaps supposed heard only outside.
+
+
+
+     Known problems :
+     ==============
+     - "once" sound must be both internal/external, otherwise triggers once the view flag toggles.
+-->
+ 
+<PropertyList>
+
+<!-- position x/y/z = depth/width/height, from nose (because of VRP) -->
+
+
+ <fx>
+
+<!-- ENGINE INTERNAL -->
+  
+  <engine>
+   <name>whine left</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <property>/sim/current-view/internal</property>
+     <or>
+      <property>/engines/engine[0]/running</property>
+      <property>/engines/engine[1]/running</property>
+     </or>
+    </and>
+   </condition>
+   <position>
+    <x>30.0</x>                                        <!-- wing -->
+    <y>-17.0</y>                                       <!-- left -->
+    <z>0.0</z>
+   </position>
+   <volume>
+    <property>/engines/engine[0]/n1</property>
+    <type>ln</type>
+    <factor>0.028</factor>
+    <offset>0.014</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[1]/n1</property>
+    <type>ln</type>
+    <factor>0.028</factor>
+    <offset>0.014</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+   <pitch>
+    <property>/engines/engine[1]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+  </engine>
+  
+  <engine>
+   <name>whine right</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <property>/sim/current-view/internal</property>
+     <or>
+      <property>/engines/engine[2]/running</property>
+      <property>/engines/engine[3]/running</property>
+     </or>
+    </and>
+   </condition>
+   <position>
+    <x>30.0</x>                                        <!-- wing -->
+    <y>17.0</y>                                        <!-- right -->
+    <z>0.0</z>
+   </position>
+   <volume>
+    <property>/engines/engine[2]/n1</property>
+    <type>ln</type>
+    <factor>0.028</factor>
+    <offset>0.014</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[3]/n1</property>
+    <type>ln</type>
+    <factor>0.028</factor>
+    <offset>0.014</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[2]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+   <pitch>
+    <property>/engines/engine[3]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+  </engine>
+
+<!-- ENGINE EXTERNAL -->
+  
+  <engine>
+   <name>whine external left</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <not>
+      <property>/sim/current-view/internal</property>
+     </not>
+     <or>
+      <property>/engines/engine[0]/running</property>
+      <property>/engines/engine[1]/running</property>
+     </or>
+    </and>
+   </condition>
+   <position>
+    <x>30.0</x>
+    <y>-17.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <property>/engines/engine[0]/n1</property>
+    <type>ln</type>
+    <factor>0.06</factor>
+    <offset>0.03</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[1]/n1</property>
+    <type>ln</type>
+    <factor>0.06</factor>
+    <offset>0.03</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[0]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+   <pitch>
+    <property>/engines/engine[1]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+  </engine>
+  
+  <engine>
+   <name>whine external right</name>
+   <path>Sounds/whine.wav</path>
+   <mode>looped</mode>
+   <condition>
+    <and>
+     <not>
+      <property>/sim/current-view/internal</property>
+     </not>
+     <or>
+      <property>/engines/engine[2]/running</property>
+      <property>/engines/engine[3]/running</property>
+     </or>
+    </and>
+   </condition>
+   <position>
+    <x>30.0</x>
+    <y>17.0</y>
+    <z>0.0</z>
+   </position>
+   <volume>
+    <property>/engines/engine[2]/n1</property>
+    <type>ln</type>
+    <factor>0.06</factor>
+    <offset>0.03</offset>
+   </volume>
+   <volume>
+    <property>/engines/engine[3]/n1</property>
+    <type>ln</type>
+    <factor>0.06</factor>
+    <offset>0.03</offset>
+   </volume>
+   <pitch>
+    <property>/engines/engine[2]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+   <pitch>
+    <property>/engines/engine[3]/n1</property>
+    <factor>0.01</factor>
+    <offset>0.15</offset>
+   </pitch>
+  </engine>
+
+<!-- OUTSIDE -->
+
+  <gear>
+   <name>gear</name>
+   <mode>in-transit</mode>
+   <path>Sounds/gear.wav</path>
+   <condition>
+    <and>
+     <not>
+      <property>/sim/current-view/internal</property>
+     </not>
+     <greater-than>
+      <property>/gear/gear[0]/position-norm</property>
+      <value>0.0</value>
+     </greater-than>
+     <less-than>
+      <property>/gear/gear[0]/position-norm</property>
+      <value>1.0</value>
+     </less-than>
+    </and>
+   </condition>
+   <property>/gear/gear[0]/position-norm</property>
+   <volume>
+    <max>0.15</max>
+   </volume>
+   <pitch>
+    <internal>dt_play</internal>
+    <offset>1.0</offset>
+    <factor>-0.001</factor>
+   </pitch>
+   <position>
+    <x>30.0</x>                                                       <!-- gear -->
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+  </gear>
+ 
+  <flap>
+   <name>flaps</name>
+   <mode>in-transit</mode>
+   <path>Sounds/flaps.wav</path>
+   <condition>
+    <and>
+     <not>
+      <property>/sim/current-view/internal</property>
+     </not>
+     <not-equals>
+      <property>/surface-positions/flap-pos-norm</property>
+      <property n="1">/controls/flight/flaps</property>
+     </not-equals>
+    </and>
+   </condition>
+   <property>/surface-positions/flap-pos-norm</property>
+   <volume>
+    <factor>0.07</factor>
+   </volume>
+   <position>
+    <x>35.0</x>                                                       <!-- wing -->
+    <y>0.0</y>
+    <z>0.0</z>
+   </position>
+  </flap>
+
+<!-- COCKPIT -->
+
+  <squeal>
+   <name>squeal</name>
+   <path>Sounds/squeal.wav</path>
+   <condition>
+    <and>
+     <less-than> <!-- BUG : wow not reset, when starting in flight -->
+      <property>/position/altitude-agl-ft</property>
+      <value>50</value>
+     </less-than>
+     <or>
+      <property>/gear/gear[0]/wow</property>
+      <property>/gear/gear[1]/wow</property>
+      <property>/gear/gear[2]/wow</property>
+      <property>/gear/gear[3]/wow</property>
+      <property>/gear/gear[4]/wow</property>
+     </or>
+    </and>
+   </condition>
+   <volume>
+    <property>/velocities/speed-down-fps</property>
+    <factor>0.05</factor>
+   </volume>
+   <volume>
+    <property>/velocities/groundspeed-kt</property>
+    <factor>0.01</factor>
+   </volume>
+   <volume>
+    <internal>dt_stop</internal>
+    <factor>0.05</factor>
+    <max>1.0</max>
+   </volume>
+   <pitch>
+    <property>/velocities/groundspeed-kt</property>
+    <factor>0.0025</factor>
+    <offset>1.2</offset>
+   </pitch>
+  </squeal>
+ 
+  <stall>
+   <name>stall</name>
+   <mode>looped</mode>
+   <type>avionics</type>
+   <path>Sounds/stall.wav</path>
+   <property>/sim/alarms/stall-warning</property>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <min>30.0</min>
+   </volume>
+  </stall>
+
+  <wind>
+   <name>wind</name>
+   <mode>looped</mode>
+   <path>Sounds/wind-8khz.wav</path>
+   <condition>
+    <and>
+     <property>/sim/current-view/internal</property>
+     <greater-than>
+      <property>/velocities/airspeed-kt</property>
+      <value>50</value>       <!-- enough speed -->
+     </greater-than>
+    </and>
+   </condition>
+   <volume>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.001</factor>
+    <min>0.03</min>
+    <max>0.1</max>
+   </volume>
+   <pitch>
+    <property>/velocities/airspeed-kt</property>
+    <factor>0.01</factor>
+    <offset>1.25</offset>
+   </pitch>
+  </wind>
+ 
+  <terrain>
+   <name>pull up</name>
+   <mode>looped</mode>
+   <type>avionics</type>
+   <path>Sounds/mk-viii/pull-up.wav</path>
+   <condition>
+    <and include="../Panels/Instruments/747-cond-voltage-inst.xml">
+     <property>/systems/warning/red/pull-up</property>
+    </and>
+   </condition>
+   <volume>
+    <max>0.4</max>
+    <min>0.1</min>
+   </volume>
+  </terrain>
+
+  <door>
+   <name>flight deck door</name>
+   <path>Sounds/door_close.wav</path>
+   <condition>
+    <equals>
+     <property>/controls/doors/crew/flightdeck/position-norm</property>
+     <value>0.0</value>
+    </equals>
+   </condition>
+   <volume>
+    <factor>0.2</factor>
+   </volume>
+   <position>
+    <x>7.5</x>
+    <y>-1.0</y>
+    <z>0.0</z>
+   </position>
+  </door>
+
+  <door>
+   <name>exit door</name>
+   <path>Sounds/door_close.wav</path>
+   <condition>
+    <equals>
+     <property>/controls/doors/crew/exit/position-norm</property>
+     <value>0.0</value>
+    </equals>
+   </condition>
+   <volume>
+    <factor>0.2</factor>
+   </volume>
+   <position>
+    <x>7.5</x>
+    <y>2.5</y>
+    <z>0.0</z>
+   </position>
+  </door>
+
+</fx>
+ 
+</PropertyList>
+
+
+

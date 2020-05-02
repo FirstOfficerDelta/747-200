@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+   <name type="string" n="0">landing</name>
+
+   <overlay>
+    <controls>
+     <autoflight>
+      <dial-altitude-ft type="int">3000</dial-altitude-ft>                <!-- below glide slope -->
+      <dial-speed-kt type="int">160</dial-speed-kt>
+     </autoflight>
+     <gear>
+      <brake-parking type="double">0.0</brake-parking>
+     </gear>
+    </controls>
+    <instrumentation>
+     <ins n="0">
+      <control>
+       <selector type="int">3</selector>
+      </control>
+     </ins>
+    </instrumentation>
+    <sim>
+     <presets>
+      <airspeed-kt type="double">200</airspeed-kt>                        <!-- less lateral oscillations -->
+      <altitude-ft type="double">3000</altitude-ft>
+      <offset-distance-nm type="double">15</offset-distance-nm>
+     </presets>
+    </sim>
+   </overlay>
+
+</PropertyList>

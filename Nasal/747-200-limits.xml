@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+    
+  <mass-and-balance>
+    <maximum-takeoff-mass-lbs>833000</maximum-takeoff-mass-lbs>
+    <maximum-landing-mass-lbs>630000</maximum-landing-mass-lbs>
+  </mass-and-balance>
+
+<!-- copilot warnings -->
+
+  <max-gear-extension-speed>270</max-gear-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>0.0</flaps>
+   <speed>255</speed>
+  </max-flap-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>0.167</flaps>
+   <speed>238</speed>
+  </max-flap-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>0.333</flaps>
+   <speed>231</speed>
+  </max-flap-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>0.667</flaps>
+   <speed>205</speed>
+  </max-flap-extension-speed>
+  <max-flap-extension-speed>
+   <flaps>0.833</flaps>
+   <speed>180</speed>
+  </max-flap-extension-speed>
+
+</PropertyList>

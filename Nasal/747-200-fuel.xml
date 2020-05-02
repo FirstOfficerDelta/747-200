@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<!-- Fuel configurations : in JSBSim, 1 gal US = 6.6 lb.
+
+     Default is max landing weight.
+
+     Format :
+     - all tanks must have an entry.
+     - <tank n="6"></tank> means full tank (required by the tanks filling dialog).
+-->
+
+<PropertyList>
+
+ <!-- Normal landing with 630000 lb (center emptied first).  -->
+
+    <filling n="0">
+     <comment>max landing</comment>
+     <tank n="0">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="1"></tank>
+     <tank n="2">
+      <level-gal_us>6100.0</level-gal_us>
+     </tank>
+     <tank n="3">
+      <level-gal_us>6100.0</level-gal_us>
+     </tank>
+     <tank n="4"></tank>
+     <tank n="5"></tank>
+     <tank n="6"></tank>
+    </filling>
+
+<!-- Max take off weight (833000 lb). -->
+
+    <filling n="1">
+     <comment>max takeoff</comment>
+     <tank n="0"></tank>
+     <tank n="1"></tank>
+     <tank n="2"></tank>
+     <tank n="3"></tank>
+     <tank n="4"></tank>
+     <tank n="5"></tank>
+     <tank n="6"></tank>
+    </filling>
+
+<!-- Min fuel (reserves) -->
+
+    <filling n="2">
+     <comment>min fuel</comment>
+     <tank n="0">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="1">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="2">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="3">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="4">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="5"></tank>
+     <tank n="6"></tank>
+    </filling>
+
+ <!-- Cruise FL 300 (51200 gal US)  -->
+
+    <filling n="3">
+     <comment>cruise</comment>
+     <tank n="0">
+      <level-gal_us>14000.0</level-gal_us>
+     </tank>
+     <tank n="1"></tank>
+     <tank n="2"></tank>
+     <tank n="3"></tank>
+     <tank n="4"></tank>
+     <tank n="5"></tank>
+     <tank n="6"></tank>
+    </filling>
+
+ <!-- Descent FL 380 (12100 gal US)  -->
+
+    <filling n="4">
+     <comment>descent</comment>
+     <tank n="0">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="1"></tank>
+     <tank n="2">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="3">
+      <level-gal_us>0.0</level-gal_us>
+     </tank>
+     <tank n="4"></tank>
+     <tank n="5"></tank>
+     <tank n="6"></tank>
+    </filling>
+
+<!-- other -->
+
+</PropertyList>
