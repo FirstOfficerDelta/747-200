@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+<!-- COCKPIT -->
+
+  <model>
+   <name>Panel</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/panel.xml</path>
+   <offsets>
+    <x-m>-19.30253</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 2.68661</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Left column</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/column.xml</path>
+   <offsets>
+    <x-m>-19.52758</x-m>
+    <y-m>-0.46129</y-m>
+    <z-m> 2.33004</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Right column</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/column.xml</path>
+   <offsets>
+    <x-m>-19.52758</x-m>
+    <y-m> 0.46129</y-m>
+    <z-m> 2.33004</z-m>
+   </offsets>
+  </model>
+
+<!-- OVERHEAD -->
+
+  <model>
+   <name>Overhead</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/overhead.xml</path>
+   <offsets>
+    <x-m>-19.151</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 3.410</z-m>
+    <pitch-deg>-23.2</pitch-deg>
+   </offsets>
+  </model>
+
+<!-- PEDESTAL -->
+
+  <model>
+   <name>Pedestal</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/pedestal.xml</path>
+   <offsets>
+    <x-m>-18.37782</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 2.26768</z-m>
+   </offsets>
+  </model>
+
+<!-- ENGINEER -->
+
+  <model>
+   <name>Engineer Panel</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/engineer.xml</path>
+   <offsets>
+    <x-m>-18.23775</x-m>
+    <y-m> 0.54784</y-m>
+    <z-m> 2.26262</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Flight Deck Door</name>
+   <path>Aircraft/747-200/Models/Interior/flightdeck/door.xml</path>
+   <offsets>
+    <x-m>-16.87956</x-m>
+    <y-m>-0.02886</y-m>
+    <z-m> 2.26078</z-m>
+   </offsets>
+  </model>
+
+
+<!-- =============== -->
+<!-- Level Of Detail -->
+<!-- =============== -->
+
+ <animation>
+  <name>All interior</name>
+  <object-name>Panel</object-name>
+  <object-name>Left Column</object-name>
+  <object-name>Right Column</object-name>
+  <object-name>Overhead</object-name>
+  <object-name>Pedestal</object-name>
+  <object-name>Engineer Panel</object-name>
+  <object-name>Flight Deck Door</object-name>
+ </animation>
+
+ <animation>
+  <type>range</type>
+  <object-name>All interior</object-name>
+  <min-m>0</min-m>
+  <max-m>20</max-m>
+ </animation>
+
+</PropertyList>

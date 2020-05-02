@@ -1,0 +1,20 @@
+<?xml version="1.0" ?> 
+
+<!-- 747-200 pilots panel.
+
+
+     Auto smoothed (30 degrees).
+-->
+
+<PropertyList> 
+ <path>panel.ac</path> 
+
+ <effect>
+  <inherits-from>Aircraft/747-200/Models/Effects/interior/shadow/interior-shadow-panel</inherits-from>
+  <object-name>GlareShield</object-name>
+  <object-name>Autopilot</object-name>
+  <object-name>Warning</object-name>
+  <object-name>Panel</object-name>
+ </effect>
+
+</PropertyList>

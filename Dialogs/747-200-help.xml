@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 online help :
+
+     real data are duplicated from Readme.
+-->
+
+<PropertyList>
+
+<!-- Advanced keys -->
+    
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name>a/A</name>
+   <desc>speed-up (with time warp)</desc>
+  </key>
+  <key>
+   <name>ctrl-K</name>
+   <desc>toggle observer view (floating)</desc>
+  </key>
+  <key>
+   <name>q</name>
+   <desc>quit speed-up</desc>
+  </key>
+  <key>
+   <name>shift-ctrl-V</name>
+   <desc>reset view pitch</desc>
+  </key>
+  <key>
+   <name>shift-ctrl-X</name>
+   <desc>reset floating view</desc>
+  </key>
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name>F4</name>
+   <desc>navigation dialog</desc>
+  </key>
+  <key>
+   <name>F9</name>
+   <desc>toggle nearby view</desc>
+  </key>
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name></name>
+   <desc></desc>
+  </key>
+  <key>
+   <name>shift-F5/F6</name>
+   <desc>move floating view aft/front</desc>
+  </key>
+  <key>
+   <name>ctrl-F5/F6</name>
+   <desc>move floating view down/up</desc>
+  </key>
+  <key>
+   <name>shift-F7/F8</name>
+   <desc>move floating view left/right</desc>
+  </key>
+
+
+<!-- FDM advanced ops -->
+
+<text><!-- Real data -->
+ ________________________Limitations________________________
+ Vne/Mne       : 445 kt / Mach 0.95
+ Vmo/Mmo       : 375 kt / Mach 0.92
+
+ landing gear limits
+    extended   : 320 kt / Mach 0.82
+    extend     : 270 kt / Mach 0.82
+    retract    : 250 kt / Mach 0.82
+
+ flaps limits
+     1 deg     : 275 kt
+     5 deg     : 255 kt
+    10 deg     : 238 kt
+    20 deg     : 231 kt
+    25 deg     : 205 kt
+    30 deg     : 180 kt
+
+ V2   (MTOW)   : 190 kt
+ Vapp
+    min        : Vref + 5 kt
+    app        : Vref + 1/2 head wind
+    max        : Vref + 20 kt
+ Vref (MLW)    : 154 kt
+
+ ceiling : 45100 ft
+
+ max take off (MTOW) : 833000 lb
+ max landing  (MLW)  : 630000 lb</text>
+
+</PropertyList>

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>747-200-autopilot</name>
+  <layout>vbox</layout>
+
+  <group>
+    <layout>hbox</layout>
+    
+    <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>747-200 autopilot</label>
+    </text>
+
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule><dummy/></hrule>
+
+  <group>
+    <layout>vbox</layout>
+    <halign>center</halign>
+
+    <text>
+      <label>INS</label>
+    </text>
+
+    <group>
+     <layout>vbox</layout>
+     <halign>left</halign>
+
+     <checkbox>
+       <halign>left</halign>
+       <label>Route activation toggles autopilot (not real)  ~</label>
+       <property>/controls/autoflight/fg-waypoint</property>
+       <binding>
+        <command>property-toggle</command>
+        <property>/controls/autoflight/fg-waypoint</property>
+       </binding>
+     </checkbox>
+    </group>
+
+    <text>
+      <label></label>
+    </text>
+
+    <text>
+      <label>Autoland</label>
+    </text>
+
+    <checkbox>
+      <halign>left</halign>
+      <label>Nav accurate until 0 ft AGL (real)  ~</label>
+      <property>/controls/autoflight/real-nav</property>
+      <binding>
+       <command>property-toggle</command>
+       <property>/controls/autoflight/real-nav</property>
+      </binding>
+    </checkbox>
+
+  </group>
+
+  <text>
+    <label></label>
+  </text>
+
+  <group>
+   <layout>hbox</layout>
+
+   <button>
+    <legend>Back</legend>
+    <key>b</key>
+    <binding>
+     <command>dialog-show</command>
+     <dialog-name>747-200-menu</dialog-name>
+    </binding>
+    <binding>
+     <command>dialog-close</command>
+    </binding>
+   </button>
+
+   <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+     <command>dialog-close</command>
+    </binding>
+   </button>
+  </group>
+</PropertyList>

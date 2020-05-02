@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!-- default United Airlines livery.
+
+
+     Seat colors by (A).
+
+
+     References :
+     ==========
+     (A) http://www.airliners.net/photo/United-Airlines/Boeing-747-2.../0057109/L/ :
+     Steve Harper.
+
+-->
+
+<PropertyList>
+  <sim>
+    <model>
+     <livery>
+      <name type="string">United Airlines</name>
+      <index type="int">0</index>
+      <texture>747NW-fuselage.rgb</texture>
+      <texture-seat>747-200-seat.rgb</texture-seat>
+     </livery>
+    </model>
+  </sim>
+</PropertyList>

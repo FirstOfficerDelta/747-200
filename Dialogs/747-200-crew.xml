@@ -1,0 +1,127 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <name>747-200-crew</name>
+  <layout>vbox</layout>
+  <width>450</width>
+  
+  <group>
+    <layout>hbox</layout>
+    
+    <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>747-200 crew</label>
+    </text>
+
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule><dummy/></hrule>
+
+  <group>
+    <layout>vbox</layout>
+    <enabled alias="/sim/rendering/shaders/skydome"/>
+
+    <text>
+     <label>Lighting</label>
+    </text>
+
+    <text>
+     <label></label>
+    </text>
+
+    <checkbox>
+      <label>Flash light</label>
+      <halign>left</halign>
+      <property>/controls/lighting/flash-light</property>
+      <binding>
+       <command>property-toggle</command>
+       <property>/controls/lighting/flash-light</property>
+      </binding>
+      <binding>
+       <command>nasal</command>
+       <script>globals.Boeing747.lightingsystem.flashlightexport();</script>
+      </binding>
+    </checkbox>
+  </group>
+
+  <text>
+    <label></label>
+  </text>
+
+  <text>
+    <label></label>
+  </text>
+
+  <group>
+   <layout>hbox</layout>
+      
+   <checkbox>
+    <halign>left</halign>
+    <label>Elapsed clock  ~</label>
+    <color>
+     <red>0.5</red>
+     <green>0.5</green>
+     <blue>0.5</blue>
+    </color>
+    <live>true</live>
+    <property>/controls/crew/clock</property>
+    <binding>
+     <command>property-toggle</command>
+     <property>/controls/crew/clock</property>
+    </binding>
+   </checkbox>
+
+   <text>
+    <live>true</live>
+    <enabled alias="/controls/crew/clock"/>
+    <property>/systems/engineer/navigation/clock-string</property>
+    <color>
+     <red>0.2</red>
+     <green>0.8</green>
+     <blue>0.2</blue>
+    </color>
+   </text>
+  </group>
+
+  <text>
+    <label></label>
+  </text>
+
+  <group>
+    <layout>hbox</layout>
+
+    <button>
+      <legend>Back</legend>
+      <key>b</key>
+      <binding>
+       <command>dialog-show</command>
+       <dialog-name>747-200-menu</dialog-name>
+      </binding>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+
+    <button>
+      <legend>Close</legend>
+      <default>true</default>
+      <key>Esc</key>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+</PropertyList>

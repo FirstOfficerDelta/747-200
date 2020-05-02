@@ -1,0 +1,51 @@
+<?xml version="1.0" ?> 
+
+<!-- 747-200 flight deck door.
+
+
+     Auto smoothed (30 degrees).
+-->
+
+<PropertyList> 
+ <path>door.ac</path> 
+
+ <animation>
+  <type>rotate</type>
+  <object-name>FlightDeckDoor</object-name>
+  <property>controls/doors/crew/flightdeck/position-norm</property>
+  <interpolation>
+    <entry>
+     <ind>0.0</ind>
+     <dep>0.0</dep>
+    </entry>
+    <entry>
+     <ind>1.0</ind>
+     <dep>180.0</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>0.0</x-m>
+   <y-m>0.0</y-m>
+   <z-m>0.0</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>0.0</y>
+   <z>1.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>pick</type>
+  <object-name>FlightDeckDoor</object-name>
+  <action>
+   <button>0</button>
+   <repeatable>false</repeatable>
+   <binding>
+    <command>nasal</command>
+    <script>globals.Boeing747.doorsystem.flightdeckexport();</script>
+   </binding>
+  </action>
+ </animation>
+
+</PropertyList>

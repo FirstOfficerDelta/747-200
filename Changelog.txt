@@ -1,0 +1,18 @@
+     Version           SVN/GIT date               Milestone
+================================================================================================
+     2.4               February 2020              ALS support (internal shadows).
+     2.3               April 2017                 State support.
+     2.2               March 2014                 Warning lights (gear down, engine oil
+                                                  pressure).
+     2.1               October 2013               VHF.
+     2.0               October 2011               First version using flight manual.
+                                                  Tyre smoke effect.
+                                                  Conversion to 3D : pedestal.
+                                                  INS.
+     1.2               March 2010                 FDM 2.0 (747 coefficients),
+                                                  body gear and nose wheel steering, pushback.
+     1.1               February 2008              3D cockpit, with seats, yokes, levers,
+                                                  and a few warning lights.
+     1.0               December 2006              Aircraft, FDM, 2D panel.
+================================================================================================
+

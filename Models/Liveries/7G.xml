@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<!--
+
+     Path must be from calling .xml.
+
+
+     TO DO : MK Airlines livery.
+
+
+     References
+     ==========
+     (A) http://www.airliners.net/photo/Untitled-(MK-Airlines)/Boeing-747-2B5F-SCD/0954074/L/ :
+     9G-MKS by Serge Bailleul.
+
+-->
+
+<PropertyList>
+  <sim>
+    <model>
+     <livery>
+      <name type="string">MK Airlines (seats)</name>
+      <index type="int">1</index>
+      <texture>747NW-fuselage.rgb</texture>
+      <texture-seat>../../Models/Liveries/747-200-seat-7G.rgb</texture-seat>
+     </livery>
+    </model>
+  </sim>
+</PropertyList>

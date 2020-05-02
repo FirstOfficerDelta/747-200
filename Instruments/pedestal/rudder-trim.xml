@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<!-- TO DO : wheel should have 24 faces. -->
+
+
+<PropertyList>
+
+ <path>rudder-trim.ac</path>
+
+
+  <animation>
+   <type>rotate</type>
+   <object-name>RudderTrim</object-name>
+   <property>controls/flight/rudder-trim</property>
+   <factor>-540</factor>
+   <center>
+    <x-m> 0.0</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 0.0</z-m>
+   </center>
+   <axis>
+    <x>0.0</x>
+    <y>0.0</y>
+    <z>1.0</z>
+   </axis>
+  </animation>
+
+  <animation>
+   <type>knob</type>
+   <object-name>RudderTrim</object-name>
+   <action>
+    <binding>
+     <command>property-adjust</command>
+     <property>controls/flight/rudder-trim</property>
+     <factor>-0.003</factor>
+     <min>-1</min>
+     <max>1</max>
+     <wrap>0</wrap>
+    </binding>
+   </action>
+  </animation>
+
+</PropertyList>

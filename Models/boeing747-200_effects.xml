@@ -1,0 +1,145 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+
+  <!-- ENGINE CONTRAILS -->
+  
+ <model>
+  <path>Aircraft/747-200/Models/Effects/contrail/contrail-new.xml</path>
+  <offsets>
+   <x-m> 15.81</x-m>
+   <y-m>-21.38</y-m>
+   <z-m> -2.07</z-m>
+   <heading-deg>0</heading-deg>
+  </offsets>
+ </model>
+  
+ <model>
+  <path>Aircraft/747-200/Models/Effects/contrail/contrail-new.xml</path>
+  <offsets>
+   <x-m>  6.59</x-m>
+   <y-m>-12.08</y-m>
+   <z-m> -2.95</z-m>
+   <heading-deg>0</heading-deg>
+  </offsets>
+ </model>
+  
+ <model>
+  <path>Aircraft/747-200/Models/Effects/contrail/contrail-new.xml</path>
+  <offsets>
+   <x-m>  6.59</x-m>
+   <y-m> 12.08</y-m>
+   <z-m> -2.95</z-m>
+   <heading-deg>0</heading-deg>
+  </offsets>
+ </model>
+  
+ <model>
+  <path>Aircraft/747-200/Models/Effects/contrail/contrail-new.xml</path>
+  <offsets>
+   <x-m> 15.81</x-m>
+   <y-m> 21.38</y-m>
+   <z-m> -2.07</z-m>
+   <heading-deg>0</heading-deg>
+  </offsets>
+ </model>
+
+ 
+ <!-- TYRE SMOKE -->
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-nose.xml</path>
+  <name>tyre-smoke-n</name>
+  <offsets>
+   <x-m>-16.594</x-m>
+   <y-m>0</y-m>
+   <z-m>-5.762</z-m>
+  </offsets>
+ </model>
+
+ <!-- wing -->
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+  <name>tyre-smoke-left1</name>
+  <offsets>
+   <x-m>6.927</x-m>
+   <y-m>-5.700</y-m>
+   <z-m>-5.777</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+  <name>tyre-smoke-left2</name>
+  <offsets>
+   <x-m>8.528</x-m>
+   <y-m>-5.700</y-m>
+   <z-m>-5.777</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+  <name>tyre-smoke-right1</name>
+  <offsets>
+   <x-m>6.927</x-m>
+   <y-m>5.700</y-m>
+   <z-m>-5.777</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+  <name>tyre-smoke-right2</name>
+  <offsets>
+   <x-m>8.528</x-m>
+   <y-m>5.700</y-m>
+   <z-m>-5.777</z-m>
+  </offsets>
+ </model>
+
+<!-- body -->
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+  <name>tyre-smoke-left-body1</name>
+  <offsets>
+   <x-m>10.552</x-m>
+   <y-m>-1.940</y-m>
+   <z-m>-5.768</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-port.xml</path>
+  <name>tyre-smoke-left-body2</name>
+  <offsets>
+   <x-m>12.153</x-m>
+   <y-m>-1.940</y-m>
+   <z-m>-5.768</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+  <name>tyre-smoke-right-body1</name>
+  <offsets>
+   <x-m>10.552</x-m>
+   <y-m>1.940</y-m>
+   <z-m>-5.768</z-m>
+  </offsets>
+ </model>
+
+ <model>
+  <path>Aircraft/Generic/Effects/tyre-smoke-stbd.xml</path>
+  <name>tyre-smoke-right-body2</name>
+  <offsets>
+   <x-m>12.153</x-m>
+   <y-m>1.940</y-m>
+   <z-m>-5.768</z-m>
+  </offsets>
+ </model>
+
+</PropertyList>

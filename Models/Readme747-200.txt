@@ -1,0 +1,94 @@
+The real aircraft
+=================
+The generic passenger configuration 200B (A), with 10 portholes at upper deck,
+and 3 cargo doors on the right side.
+
+The texture is N638US (B), a 251B powered by the JT9D-7R4G2 (C);
+on upper deck, the left exit door and 6 portholes are obstructed.
+
+JT9D-7RG4G2 has a nacelle with hole; inside turbofan, air is bypassed around the shaft,
+providing a large part of thrust.
+
+
+Model
+=====
+The proportions of (A) are respected.
+
+Fuselage is shaped by a cylinder and the upper deck :
+these 2 meshes though merged are still kept distinct.
+
+This model might also be used as 747-100 (same dimensions and portholes ?).
+
+
+VRP
+---
+The model is aligned vertically along the nose axis, but is still centered
+horizontally on the center of gravity :
+- that is more handy with the Blender grid. 
+- the alignment of VRP to the nose tip is finished by XML (horizontal offset).
+
+
+Texturing
+---------
+Wing colors by N627US (D).
+
+Wing : mirror the right wing to the left wing.
+Rudder : map at once the logo on both sides.
+
+Engine : the rose is for very hot parts.
+
+Floor color by 9G-MKS (E).
+
+Windows (hull, doors, cockpit) are extracted into a separated object.
+
+
+TO DO
+=====
+- aft shape of JT9D-7RG4G2 engine ?
+
+TO DO livery
+------------
+- KLM-NW logo, on the right side.
+- release the Metapost file.
+
+
+Known problems
+==============
+- transparency ordering of cockpit glasses.
+- the a of "nwa".
+- the portholes should have a roundness.
+- the livery is difficult to repaint (not a skin).
+
+
+References
+==========
+(A) http://www.boeing.com/ :
+    747 airplane characteristics, D6-58236.
+
+(B) http://www.airliners.net/open.file/0996488/L/ :
+    N638US by Danny Fritsche.
+
+(C) http://www.aerotransport.org/php/go.php?q=N638US :
+
+(D) http://www.airliners.net/open.file/0820734/L/ :
+    N627US by Wietse de Graaf.
+
+(E) http://www.airliners.net/photo/Untitled-(MK-Airlines)/Boeing-747-2B5F-SCD/0954074/L/ :
+    9G-MKS by Serge Bailleul.
+
+
+Credits
+-------
+Adapted from J. Wilson's 747-400.
+Metapost template by M. Franz.
+
+http://www.usflag.org/ : the 50 stars flag.
+
+
+Made with Blender 2.67a and Gimp.
+AC3D export :
+- auto smooth is enabled (default is 30 degrees). Except fuselage antennas, seats, yokes, many levers and switches. 
+- AC3D groups are removed, to help import/export.
+
+
+23 March 2014.

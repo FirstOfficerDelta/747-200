@@ -1,0 +1,987 @@
+<?xml version="1.0"?>
+
+<!--
+     all panels are 1024x512, i.e. surface must have width/height = 2/1, to keep the scale of instruments.
+
+-->
+
+<PropertyList>
+
+ <!-- ======================================= -->
+ <!-- panel models (X/Y/Z depth/width/height) -->
+ <!-- ======================================= -->
+
+ <!-- AUTOPILOT -->
+
+  <panel>
+   <name>Panel2DAutopilot</name>
+   <path>Aircraft/747-200/Panels/747-200-autopilot.xml</path>
+   <bottom-left>
+    <x-m>-19.267</x-m>
+    <y-m>-0.281</y-m>
+    <z-m> 3.023</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-19.267</x-m>
+    <y-m> 0.229</y-m>
+    <z-m> 3.023</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-19.302</x-m>
+    <y-m>-0.281</y-m>
+    <z-m> 3.268</z-m>
+   </top-left>
+  </panel>
+
+  <panel>
+   <name>Panel2DAutopilotRight</name>
+   <path>Aircraft/747-200/Panels/747-200-autopilot-right.xml</path>
+   <bottom-left>
+    <x-m>-19.267</x-m>
+    <y-m> 0.277</y-m>
+    <z-m> 3.023</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-19.267</x-m>
+    <y-m> 0.787</y-m>
+    <z-m> 3.023</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-19.302</x-m>
+    <y-m> 0.277</y-m>
+    <z-m> 3.268</z-m>
+   </top-left>
+  </panel>
+
+ <!-- PILOT -->
+
+  <panel>
+   <name>Panel2DPilot</name>
+   <path>Aircraft/747-200/Panels/747-200-pilot.xml</path>
+   <bottom-left>
+    <x-m>-19.302</x-m>
+    <y-m>-0.581</y-m>
+    <z-m> 2.668</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-19.302</x-m>
+    <y-m> 0.429</y-m>
+    <z-m> 2.668</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-19.348</x-m>
+    <y-m>-0.581</y-m>
+    <z-m> 3.173</z-m>
+   </top-left>
+  </panel>
+
+  <panel>
+   <name>Panel2DCopilot</name>
+   <path>Aircraft/747-200/Panels/747-200-copilot.xml</path>
+   <bottom-left>
+    <x-m>-19.302</x-m>
+    <y-m> 0.306</y-m>
+    <z-m> 2.668</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-19.302</x-m>
+    <y-m> 1.316</y-m>
+    <z-m> 2.668</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-19.348</x-m>
+    <y-m> 0.306</y-m>
+    <z-m> 3.173</z-m>
+   </top-left>
+  </panel>
+
+ <!-- OVERHEAD -->
+
+  <panel>
+   <name>Panel2DOverhead</name>
+   <path>Aircraft/747-200/Panels/747-200-overhead.xml</path>
+   <bottom-left>
+    <x-m>-19.280</x-m>
+    <y-m>-0.251</y-m>
+    <z-m> 3.328</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-19.280</x-m>
+    <y-m> 0.759</y-m>
+    <z-m> 3.328</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-18.775</x-m>
+    <y-m>-0.251</y-m>
+    <z-m> 3.578</z-m>
+   </top-left>
+  </panel>
+
+ <!-- ENGINEER -->
+
+  <panel>
+   <name>Panel2DEngineerFuel</name>
+   <path>Aircraft/747-200/Panels/747-200-engineer-fuel.xml</path>
+   <bottom-left>
+    <x-m>-17.86</x-m>
+    <y-m> 0.55</y-m>
+    <z-m> 2.78</z-m>
+   </bottom-left>
+   <bottom-right>
+    <x-m>-17.36</x-m>
+    <y-m> 0.55</y-m>
+    <z-m> 2.78</z-m>
+   </bottom-right>
+   <top-left>
+    <x-m>-17.86</x-m>
+    <y-m> 0.59</y-m>
+    <z-m> 3.03</z-m>
+   </top-left>
+  </panel>
+
+<!-- OSG doesn't clip the panels -->
+
+  <animation>
+   <type>range</type>
+   <object-name>Panel2DAutopilot</object-name>
+   <min-m>0</min-m>
+   <max-m>1.7</max-m>          <!-- Observer view -->
+  </animation>
+
+  <animation>
+   <type>range</type>
+   <object-name>Panel2DPilot</object-name>
+   <object-name>Panel2DCopilot</object-name>
+   <min-m>0</min-m>
+   <max-m>1.7</max-m>          <!-- Engineer view -->
+  </animation>
+
+  <animation>
+   <type>range</type>
+   <object-name>Panel2DAutopilotRight</object-name>
+   <object-name>Panel2DOverhead</object-name>
+   <object-name>Panel2DEngineerFuel</object-name>
+   <min-m>0</min-m>
+   <max-m>1.5</max-m>          <!-- Flight deck door closed -->
+  </animation>
+
+
+<!-- =========== -->
+<!-- Instruments -->
+<!-- =========== -->
+
+  <model>
+   <name>Magnetic Compass</name>
+   <path>Aircraft/Instruments-3d/mag-compass.xml</path>
+   <offsets>
+    <x-m>-19.29</x-m>
+    <y-m>0.00</y-m>
+    <z-m>3.38</z-m>
+   </offsets>
+  </model>
+
+<!-- CENTER -->
+
+  <model>
+   <name>AmberCargoDoors</name>
+   <path>Aircraft/747-200/Instruments/warning/amber-cargo-doors.xml</path>
+   <offsets>
+    <x-m>-19.271</x-m>
+    <y-m>-0.0524</y-m>
+    <z-m>3.007</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>RedPullUp</name>
+   <path>Aircraft/747-200/Instruments/warning/red-pull-up.xml</path>
+   <offsets>
+    <x-m>-19.271</x-m>
+    <y-m>-0.0138</y-m>
+    <z-m>3.007</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+<!-- warning lights -->
+
+  <model>
+   <name>Engine oil pressure 1</name>
+   <path>Aircraft/747-200/Instruments/warning/amber-engine-oil-pressure.xml</path>
+   <offsets>
+    <x-m>-19.318</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.848</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Engine oil pressure 2</name>
+   <path>Aircraft/747-200/Instruments/warning/amber-engine-oil-pressure.xml</path>
+   <offsets>
+    <x-m>-19.318</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.848</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+   <overlay>
+    <params>
+     <oil-pressure>systems/warning/amber/engine-oil-pressure[1]</oil-pressure>
+     <engine-num>systems/engines/engine[1]/engine-num</engine-num>
+    </params>
+   </overlay>
+  </model>
+
+  <model>
+   <name>Engine oil pressure 3</name>
+   <path>Aircraft/747-200/Instruments/warning/amber-engine-oil-pressure.xml</path>
+   <offsets>
+    <x-m>-19.318</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.848</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+   <overlay>
+    <params>
+     <oil-pressure>systems/warning/amber/engine-oil-pressure[2]</oil-pressure>
+     <engine-num>systems/engines/engine[2]/engine-num</engine-num>
+    </params>
+   </overlay>
+  </model>
+
+  <model>
+   <name>Engine oil pressure 4</name>
+   <path>Aircraft/747-200/Instruments/warning/amber-engine-oil-pressure.xml</path>
+   <offsets>
+    <x-m>-19.318</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.848</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+   <overlay>
+    <params>
+     <oil-pressure>systems/warning/amber/engine-oil-pressure[3]</oil-pressure>
+     <engine-num>systems/engines/engine[3]/engine-num</engine-num>
+    </params>
+   </overlay>
+  </model>
+
+  <model>
+   <name>Warning81</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.317</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.835</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning82</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.317</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.835</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning83</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.317</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.835</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning84</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.317</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.835</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning71</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.315</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.822</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning72</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.315</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.822</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning73</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.315</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.822</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning74</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.315</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.822</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning61</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.314</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.808</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning62</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.314</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.808</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning63</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.314</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.808</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning64</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.314</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.807</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning51</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.313</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.794</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning52</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.313</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.794</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning53</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.313</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.794</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning54</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.313</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.794</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning41</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.311</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.781</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning42</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.311</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.781</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning43</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.311</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.781</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning44</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.311</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.781</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning31</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.310</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.767</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning32</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.310</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.767</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning33</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.310</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.767</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning34</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.310</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.767</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning21</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.308</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.754</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning22</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.308</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.754</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning23</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.308</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.754</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning24</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.308</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.754</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning11</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.307</x-m>
+    <y-m>-0.2053</y-m>
+    <z-m>2.740</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning12</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.307</x-m>
+    <y-m>-0.1765</y-m>
+    <z-m>2.740</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning13</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.307</x-m>
+    <y-m>-0.1464</y-m>
+    <z-m>2.740</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Warning14</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.307</x-m>
+    <y-m>-0.1184</y-m>
+    <z-m>2.740</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+<!-- gear -->
+
+  <model>
+   <name>GearOpen</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.329</x-m>
+    <y-m> 0.1952</y-m>
+    <z-m>2.952</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>GearDown</name>
+   <path>Aircraft/747-200/Instruments/warning/green-gear-down.xml</path>
+   <offsets>
+    <x-m>-19.329</x-m>
+    <y-m> 0.2240</y-m>
+    <z-m>2.952</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Gear</name>
+   <path>Aircraft/747-200/Instruments/warning/disabled.xml</path>
+   <offsets>
+    <x-m>-19.327</x-m>
+    <y-m> 0.2089</y-m>
+    <z-m>2.938</z-m>
+    <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>GearLever</name>
+   <path>Aircraft/747-200/Instruments/gear/gear.xml</path>
+   <offsets>
+    <x-m>-19.332</x-m>
+    <y-m>0.202</y-m>
+    <z-m>2.841</z-m>
+   </offsets>
+  </model>
+
+<!-- PEDESTAL -->
+
+  <model>
+   <name>INS 1</name>
+   <path>Aircraft/747-200/Instruments/INS/INS.xml</path>
+   <offsets>
+    <x-m>-19.250</x-m>
+    <y-m>-0.170</y-m>
+    <z-m> 2.695</z-m>
+    <pitch-deg>34</pitch-deg>
+   </offsets>
+  </model>
+
+  <model>
+   <name>INS 2</name>
+   <path>Aircraft/747-200/Instruments/INS/INS.xml</path>
+   <offsets>
+    <x-m>-19.250</x-m>
+    <y-m> 0.170</y-m>
+    <z-m> 2.695</z-m>
+    <pitch-deg>34</pitch-deg>
+   </offsets>
+   <overlay>
+    <params>
+     <ins-service>/instrumentation/ins[1]/serviceable</ins-service>
+     <ins-selector>/instrumentation/ins[1]/control/selector</ins-selector>
+     <ins-switch>/instrumentation/ins[1]/control/test</ins-switch>
+     <ins-light>/instrumentation/ins[1]/control/light</ins-light>
+     <ins-waypoint>/instrumentation/ins[1]/control/waypoint</ins-waypoint>
+     <ins-mode>/instrumentation/ins[1]/msu/mode</ins-mode>
+     <display-left>/instrumentation/ins[1]/data/left</display-left>
+     <display-right>/instrumentation/ins[1]/data/right</display-right>
+     <light-alert>/instrumentation/ins[1]/light/alert</light-alert>
+     <light-warning>/instrumentation/ins[1]/light/warning</light-warning>
+     <light-remote>/instrumentation/ins[1]/light/remote</light-remote>
+     <light-insert>/instrumentation/ins[1]/light/insert</light-insert>
+     <light-hold>/instrumentation/ins[1]/light/hold</light-hold>
+     <light-battery>/instrumentation/ins[1]/light/battery</light-battery>
+    </params>
+   </overlay>
+  </model>
+
+<!-- cylinder -->
+
+  <model>
+   <name>Cylinder</name>
+   <path>Aircraft/747-200/Instruments/pedestal/cylinder.xml</path>
+   <offsets>
+    <x-m>-19.029</x-m>
+    <y-m>0.00</y-m>
+    <z-m>2.599</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Park brake</name>
+   <path>Aircraft/747-200/Instruments/warning/red-park-brake.xml</path>
+   <offsets>
+    <x-m>-18.937</x-m>
+    <y-m>-0.139</y-m>
+    <z-m>2.650</z-m>
+    <pitch-deg>-33</pitch-deg>
+   </offsets>
+  </model>
+
+<!-- aft -->
+
+  <model>
+   <name>VHF 1</name>
+   <path>Aircraft/747-200/Instruments/pedestal/VHF.xml</path>
+   <offsets>
+    <x-m>-18.88</x-m>
+    <y-m> -0.15</y-m>
+    <z-m>  2.62</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>VHF 2</name>
+   <path>Aircraft/747-200/Instruments/pedestal/VHF.xml</path>
+   <offsets>
+    <x-m>-18.88</x-m>
+    <y-m>  0.15</y-m>
+    <z-m>  2.62</z-m>
+   </offsets>
+   <overlay>
+    <params>
+     <vhf-frq>/instrumentation/comm[1]/frequencies/selected-mhz</vhf-frq>
+     <vhf-stdby>/instrumentation/comm[1]/frequencies/standby-mhz</vhf-stdby>
+     <vhf-selected>/controls/audio/comm[1]/selected</vhf-selected>
+     <vhf-selected2>/controls/audio/comm[1]/standby</vhf-selected2>
+     <vhf-knob>/controls/audio/comm[1]/knob[0]</vhf-knob>
+     <vhf-knob2>/controls/audio/comm[1]/knob[1]</vhf-knob2>
+    </params>
+   </overlay>
+  </model>
+
+  <model>
+   <name>INS 3</name>
+   <path>Aircraft/747-200/Instruments/INS/INS.xml</path>
+   <offsets>
+    <x-m>-18.70</x-m>
+    <y-m> 0.0</y-m>
+    <z-m> 2.623</z-m>
+   </offsets>
+   <overlay>
+    <params>
+     <ins-service>/instrumentation/ins[2]/serviceable</ins-service>
+     <ins-selector>/instrumentation/ins[2]/control/selector</ins-selector>
+     <ins-switch>/instrumentation/ins[2]/control/test</ins-switch>
+     <ins-light>/instrumentation/ins[2]/control/light</ins-light>
+     <ins-waypoint>/instrumentation/ins[2]/control/waypoint</ins-waypoint>
+     <ins-mode>/instrumentation/ins[2]/msu/mode</ins-mode>
+     <display-left>/instrumentation/ins[2]/data/left</display-left>
+     <display-right>/instrumentation/ins[2]/data/right</display-right>
+     <light-alert>/instrumentation/ins[2]/light/alert</light-alert>
+     <light-warning>/instrumentation/ins[2]/light/warning</light-warning>
+     <light-remote>/instrumentation/ins[2]/light/remote</light-remote>
+     <light-insert>/instrumentation/ins[2]/light/insert</light-insert>
+     <light-hold>/instrumentation/ins[2]/light/hold</light-hold>
+     <light-battery>/instrumentation/ins[2]/light/battery</light-battery>
+    </params>
+   </overlay>
+  </model>
+
+  <model>
+   <name>ADF</name>
+   <path>Aircraft/747-200/Instruments/pedestal/ADF.xml</path>
+   <offsets>
+    <x-m>-18.59</x-m>
+    <y-m> 0.0</y-m>
+    <z-m>2.623</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Rudder trim</name>
+   <path>Aircraft/747-200/Instruments/pedestal/rudder-trim.xml</path>
+   <offsets>
+    <x-m>-18.46</x-m>
+    <y-m> 0.0</y-m>
+    <z-m>2.623</z-m>
+   </offsets>
+  </model>
+
+<!-- CREW -->
+
+  <model>
+   <name>Captain Yoke</name>
+   <path>Aircraft/747-200/Instruments/yoke/yoke.xml</path>
+   <offsets>
+    <x-m>-19.040</x-m>
+    <y-m>-0.460</y-m>
+    <z-m>2.276</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Copilot Yoke</name>
+   <path>Aircraft/747-200/Instruments/yoke/yoke.xml</path>
+   <offsets>
+    <x-m>-19.040</x-m>
+    <y-m>0.460</y-m>
+    <z-m>2.276</z-m>
+   </offsets>
+  </model>
+
+<!-- seats -->
+
+  <model>
+   <name>Captain Seat</name>
+   <path>Aircraft/747-200/Instruments/seat/captain.xml</path>
+   <offsets>
+    <x-m>-18.680</x-m>
+    <y-m>-0.460</y-m>
+    <z-m>2.263</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Copilot Seat</name>
+   <path>Aircraft/747-200/Instruments/seat/copilot.xml</path>
+   <offsets>
+    <x-m>-18.680</x-m>
+    <y-m>0.460</y-m>
+    <z-m>2.263</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Engineer Seat</name>
+   <path>Aircraft/747-200/Instruments/seat/engineer.xml</path>
+   <offsets>
+    <x-m>-17.603</x-m>
+    <y-m>0.0</y-m>
+    <z-m>2.263</z-m>
+   </offsets>
+  </model>
+
+  <model>
+   <name>Observer Seat</name>
+   <path>Aircraft/747-200/Instruments/seat/observer.xml</path>
+   <offsets>
+    <x-m>-17.269</x-m>
+    <y-m>-1.036</y-m>
+    <z-m>2.263</z-m>
+   </offsets>
+  </model>
+
+
+<!-- ============= -->
+<!-- Optimizations -->
+<!-- ============= -->
+  
+  <animation>
+   <name>Captain location</name>
+   <object-name>Captain Yoke</object-name>
+  </animation>
+ 
+  <animation>
+   <name>Overhead instruments</name>
+   <object-name>Magnetic Compass</object-name>
+  </animation>
+  
+  <animation>
+   <name>Center instruments</name>
+   <object-name>AmberCargoDoors</object-name>
+   <object-name>RedPullUp</object-name>
+   <object-name>Engine oil pressure 1</object-name>
+   <object-name>Engine oil pressure 2</object-name>
+   <object-name>Engine oil pressure 3</object-name>
+   <object-name>Engine oil pressure 4</object-name>
+   <object-name>Warning81</object-name>
+   <object-name>Warning82</object-name>
+   <object-name>Warning83</object-name>
+   <object-name>Warning84</object-name>
+   <object-name>Warning71</object-name>
+   <object-name>Warning72</object-name>
+   <object-name>Warning73</object-name>
+   <object-name>Warning74</object-name>
+   <object-name>Warning61</object-name>
+   <object-name>Warning62</object-name>
+   <object-name>Warning63</object-name>
+   <object-name>Warning64</object-name>
+   <object-name>Warning51</object-name>
+   <object-name>Warning52</object-name>
+   <object-name>Warning53</object-name>
+   <object-name>Warning54</object-name>
+   <object-name>Warning41</object-name>
+   <object-name>Warning42</object-name>
+   <object-name>Warning43</object-name>
+   <object-name>Warning44</object-name>
+   <object-name>Warning31</object-name>
+   <object-name>Warning32</object-name>
+   <object-name>Warning33</object-name>
+   <object-name>Warning34</object-name>
+   <object-name>Warning21</object-name>
+   <object-name>Warning22</object-name>
+   <object-name>Warning23</object-name>
+   <object-name>Warning24</object-name>
+   <object-name>Warning11</object-name>
+   <object-name>Warning12</object-name>
+   <object-name>Warning13</object-name>
+   <object-name>Warning14</object-name>
+   <object-name>GearOpen</object-name>
+   <object-name>GearDown</object-name>
+   <object-name>Gear</object-name>
+   <object-name>GearLever</object-name>
+  </animation>
+  
+  <animation>
+   <name>Copilot location</name>
+   <object-name>Copilot Yoke</object-name>
+  </animation>
+  
+  <animation>
+   <name>Pedestal instruments</name>
+   <object-name>INS 1</object-name>
+   <object-name>INS 2</object-name>
+   <object-name>INS 3</object-name>
+   <object-name>Cylinder</object-name>
+   <object-name>Park brake</object-name>
+   <object-name>VHF 1</object-name>
+   <object-name>VHF 2</object-name>
+   <object-name>ADF</object-name>
+   <object-name>Rudder trim</object-name>
+  </animation>
+  
+  <animation>
+   <name>All instruments</name>
+   <object-name>Captain location</object-name>
+   <object-name>Overhead instruments</object-name>
+   <object-name>Center instruments</object-name>
+   <object-name>Copilot location</object-name>
+   <object-name>Pedestal instruments</object-name>
+  </animation>
+
+  <animation>
+   <type>range</type>
+   <object-name>All instruments</object-name>
+   <min-m>0</min-m>
+   <max-m>20</max-m>
+  </animation>
+  
+  <animation>
+   <name>LOD seats</name>
+   <object-name>Captain Seat</object-name>
+   <object-name>Copilot Seat</object-name>
+   <object-name>Engineer Seat</object-name>
+   <object-name>Observer Seat</object-name>
+  </animation>
+
+  <animation>
+   <type>range</type>
+   <object-name>LOD seats</object-name>
+   <min-m>0</min-m>
+   <max-m>50</max-m>      <!-- beyond external view -->
+  </animation>
+
+</PropertyList>

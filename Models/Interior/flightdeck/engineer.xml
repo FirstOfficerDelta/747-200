@@ -1,0 +1,21 @@
+<?xml version="1.0" ?> 
+
+<!-- 747-200 engineer panel.
+
+
+     Auto smoothed (30 degrees).
+-->
+
+<PropertyList> 
+ <path>engineer.ac</path> 
+
+ <effect>
+  <inherits-from>Aircraft/747-200/Models/Effects/interior/shadow/interior-shadow-engineer</inherits-from>
+  <object-name>EngineerPanel</object-name>
+  <object-name>EngineerTable</object-name>
+  <object-name>EngineerFuses</object-name>
+  <object-name>EngineerLeft</object-name>
+  <object-name>EngineerRight</object-name>
+ </effect>
+
+</PropertyList>

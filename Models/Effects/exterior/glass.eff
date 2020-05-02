@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+    <name>Aircraft/747-200/Models/Effects/exterior/glass</name>
+    <inherits-from>Effects/model-combined-transparent</inherits-from>
+    <parameters>
+     <normalmap-enabled type="int">0</normalmap-enabled>
+     <lightmap-enabled type="int">0</lightmap-enabled>
+     <reflection-enabled type="int">1</reflection-enabled>
+     <reflection-correction type="float">0.65</reflection-correction>
+     <reflect-map-enabled type="int">0</reflect-map-enabled>
+     <reflection-fresnel type="float">0.5</reflection-fresnel>
+     <reflection-rainbow type="float">0.3</reflection-rainbow>
+     <reflection-noise type="float">0.0</reflection-noise>
+     <reflection-dynamic type="int">1</reflection-dynamic>
+     <rain-enabled type="int">2</rain-enabled>                     <!-- rain drops on external windows -->
+     <texture n= "5" >
+      <type>cubemap</type>
+      <images>
+       <positive-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/1.png</positive-x>
+       <negative-x>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/4.png</negative-x>
+       <positive-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/2.png</positive-y>
+       <negative-y>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/3.png</negative-y>
+       <positive-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/6.png</positive-z>
+       <negative-z>Aircraft/Generic/Effects/CubeMaps/fgfs-sky/5.png</negative-z>
+      </images>
+     </texture>
+     <ambient-correction type="float">0.1</ambient-correction>
+     <rendering-hint>transparent</rendering-hint>
+     <transparent>true</transparent>
+     <render-bin>
+      <bin-number>10</bin-number>
+      <bin-name>DepthSortedBin</bin-name>
+     </render-bin>
+    </parameters>
+</PropertyList>

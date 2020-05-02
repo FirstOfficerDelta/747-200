@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+
+<!-- Computations supposed to be done by the flight engineer .-->
+
+
+<PropertyList>
+  <name>747-200-navigation2</name>
+  <layout>vbox</layout>
+  <width>500</width>
+
+  <nasal>
+    <open><![CDATA[
+        globals.Boeing747.menuscreen.navigationopenexport("747-200-navigation2");
+    ]]></open>
+  </nasal>
+
+  <group>
+    <layout>hbox</layout>
+    
+    <empty><stretch>1</stretch></empty>
+
+    <text>
+      <label>747-200 navigation</label>
+    </text>
+
+    <empty><stretch>1</stretch></empty>
+
+    <button>
+      <pref-width>16</pref-width>
+      <pref-height>16</pref-height>
+      <legend></legend>
+      <keynum>27</keynum>
+      <border>2</border>
+      <binding>
+        <command>dialog-close</command>
+      </binding>
+    </button>
+  </group>
+
+  <hrule><dummy/></hrule>
+
+   <group>
+    <layout>vbox</layout>
+    <halign>center</halign>
+
+    <text>
+     <label>Rate (ft/minute) to waypoint</label>
+    </text>
+
+    <text>
+     <label></label>
+    </text>
+
+    <group>
+      <layout>hbox</layout>
+
+      <text>
+       <live>true</live>
+       <property>/autopilot/route-manager/wp[0]/id</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+
+      <text>
+       <enabled alias="/systems/engineer/navigation/wp[0]/speed"/>
+       <live>true</live>
+       <property>/systems/engineer/navigation/wp[0]/speed-fpm</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+    </group>
+
+    <group>
+      <layout>hbox</layout>
+
+      <text>
+       <live>true</live>
+       <property>/autopilot/route-manager/wp[1]/id</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+
+      <text>
+       <enabled alias="/systems/engineer/navigation/wp[1]/speed"/>
+       <live>true</live>
+       <property>/systems/engineer/navigation/wp[1]/speed-fpm</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+    </group>
+
+    <group>
+      <layout>hbox</layout>
+
+      <text>
+       <live>true</live>
+       <property>/autopilot/route-manager/wp-last/id</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+
+      <text>
+       <enabled alias="/systems/engineer/navigation/wp[2]/speed"/>
+       <live>true</live>
+       <property>/systems/engineer/navigation/wp[2]/speed-fpm</property>
+       <color>
+        <red>0.2</red>
+        <green>0.8</green>
+        <blue>0.2</blue>
+       </color>
+      </text>
+    </group>
+
+    <text>
+     <label></label>
+    </text>
+
+    <text>
+     <label>at acquired altitude (ft)</label>
+     <color>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+     </color>
+    </text>
+
+    <text>
+     <live>true</live>
+     <property>/controls/autoflight/dial-altitude-ft</property>
+     <color>
+      <red>0.2</red>
+      <green>0.8</green>
+      <blue>0.2</blue>
+     </color>
+    </text>
+
+    <text>
+     <label></label>
+    </text>
+
+    <text>
+     <label>last waypoint at</label>
+     <color>
+      <red>0.5</red>
+      <green>0.5</green>
+      <blue>0.5</blue>
+     </color>
+    </text>
+
+    <input>
+     <property>/controls/engineer/destination-ft</property>
+     <label>ft</label>
+    </input>
+   </group>
+
+  <text>
+    <label></label>
+  </text>
+
+  <text>
+    <label></label>
+  </text>
+
+  <hrule><dummy/></hrule>
+
+  <group>
+   <layout>hbox</layout>
+
+   <button>
+    <legend>1 Fuel</legend>
+    <key>1</key>
+    <binding>
+     <command>dialog-show</command>
+     <dialog-name>747-200-navigation</dialog-name>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+   </button>
+
+   <text>
+    <label>2 Descent</label>
+   </text>
+  </group>
+
+  <group>
+   <layout>hbox</layout>
+
+   <button>
+    <legend>Back</legend>
+    <key>b</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+     <command>dialog-show</command>
+     <dialog-name>747-200-menu</dialog-name>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+   </button>
+
+   <button>
+    <legend>Page 1</legend>
+    <key>p</key>
+    <binding>
+     <command>dialog-show</command>
+     <dialog-name>747-200-navigation</dialog-name>
+    </binding>
+    <binding>
+     <command>dialog-close</command>
+    </binding>
+   </button>
+
+   <button>
+    <legend>Close</legend>
+    <default>true</default>
+    <key>Esc</key>
+    <binding>
+      <command>dialog-apply</command>
+    </binding>
+    <binding>
+      <command>dialog-close</command>
+    </binding>
+   </button>
+  </group>
+</PropertyList>
