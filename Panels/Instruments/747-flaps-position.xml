@@ -1,0 +1,63 @@
+<PropertyList>
+
+ <name>Flaps position</name>
+ <w-base>110</w-base>
+ <h-base>110</h-base>
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <w>110</w>
+   <h>110</h>
+   <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/747-flaps.rgb</path>
+    <x1>0.0</x1>
+    <x2>1.0</x2>
+    <y1>0.0</y1>
+    <y2>1.0</y2>
+   </texture>
+  </layer>
+
+  <layer>
+   <name>big needle</name>
+   <w>5</w>
+   <h>32</h>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.8</x1>
+    <y1>0.78125</y1>
+    <x2>0.8375</x2>
+    <y2>1.0</y2>
+   </texture>
+   <transformations>
+    <transformation>
+     <type>rotation</type>
+     <property>/surface-positions/LE-flap-pos-norm[0]</property>
+     <interpolation>
+      <entry><ind>  0.000</ind><dep> -90.0</dep></entry>
+      <entry><ind>  0.667</ind><dep> -54.0</dep></entry>
+      <entry><ind>  1.000</ind><dep>   0.0</dep></entry>
+     </interpolation>
+    </transformation>     
+    <transformation>
+     <type>rotation</type>
+     <property>/surface-positions/flap-pos-norm[0]</property>
+     <interpolation>
+      <entry><ind>  0.000</ind><dep>   0.0</dep></entry>
+      <entry><ind>  0.167</ind><dep>  25.0</dep></entry>
+      <entry><ind>  0.333</ind><dep>  65.0</dep></entry>
+      <entry><ind>  0.667</ind><dep> 125.0</dep></entry>
+      <entry><ind>  0.833</ind><dep> 156.0</dep></entry>
+      <entry><ind>  1.000</ind><dep> 185.0</dep></entry>
+     </interpolation>
+    </transformation>     
+    <transformation>
+     <type>y-shift</type>
+     <offset>16.0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+   
+ </layers>
+</PropertyList>

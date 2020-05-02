@@ -1,0 +1,259 @@
+<?xml version="1.0"?>
+
+<!-- 747 autopilot annunciator :
+-->
+
+<PropertyList>
+
+ <name>Autopilot annunciator</name>
+ <w-base>30</w-base>
+ <h-base>90</h-base>
+
+ <layers>
+
+  <layer>
+   <name>Title</name>
+   <type>text</type>
+   <point-size>9</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>A/P</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+    <type>x-shift</type>
+     <offset>-7</offset>
+    </transformation>
+    <transformation>
+    <type>y-shift</type>
+     <offset>36</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- translucent lens -->  
+  <layer>
+   <name>Nav</name>
+   <type>switch</type>
+
+   <layer>
+    <name>on</name>
+    <type>group</type>
+    <condition>
+     <and include="747-cond-voltage-inst.xml">
+      <equals>
+       <property>/autopilot/locks/heading</property>
+       <value>nav1-hold</value>
+      </equals>
+      <property>/instrumentation/nav[0]/in-range</property>
+      <not-equals>
+       <property>/controls/autoflight/heading</property>
+       <value>autoland</value>
+      </not-equals>
+     </and>
+    </condition>
+
+    <layer include="747-bulb-on.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background on</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-nav.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+     <emissive>true</emissive>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>off</name>
+    <type>group</type>
+
+    <layer include="747-bulb-off.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background off</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-nav.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+    </layer>
+   </layer>
+
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+     <offset>25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Glide slope</name>
+   <type>switch</type>
+
+   <layer>
+    <name>on</name>
+    <type>group</type>
+    <condition>
+     <and include="747-cond-voltage-inst.xml">
+      <equals>
+       <property>/autopilot/locks/altitude</property>
+       <value>gs1-hold</value>
+      </equals>
+      <property>/instrumentation/nav[0]/has-gs</property>
+      <property>/instrumentation/nav[0]/in-range</property>
+      <not-equals>
+       <property>/controls/autoflight/heading</property>
+       <value>autoland</value>
+      </not-equals>
+     </and>
+    </condition>
+
+    <layer include="747-bulb-on.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background on</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-gs.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+     <emissive>true</emissive>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>off</name>
+    <type>group</type>
+
+    <layer include="747-bulb-off.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background off</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-gs.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+    </layer>
+   </layer>
+
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+     <offset>10</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Autoland</name>
+   <type>switch</type>
+
+   <layer>
+    <name>on</name>
+    <type>group</type>
+    <condition>
+     <and include="747-cond-voltage-inst.xml">
+      <equals>
+       <property>/controls/autoflight/heading</property>
+       <value>autoland</value>
+      </equals>
+      <not-equals>
+       <property>/autopilot/locks/heading</property>
+       <value></value>
+      </not-equals>
+      <property>/instrumentation/nav[0]/in-range</property>
+      <not-equals>
+       <property>/autopilot/locks/altitude</property>
+       <value></value>
+      </not-equals>
+      <property>/instrumentation/nav[0]/has-gs</property>
+     </and>
+    </condition>
+
+    <layer include="747-bulb-on.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background on</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-land.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+     <emissive>true</emissive>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>off</name>
+    <type>group</type>
+
+    <layer include="747-bulb-off.xml">
+     <w>30</w>
+     <h>15</h>
+    </layer>
+    <layer>
+     <name>background off</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-green-land.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>30</w>
+     <h>15</h>
+    </layer>
+   </layer>
+
+   <transformations>
+    <transformation>
+    <type>y-shift</type>
+     <offset>-5</offset>
+    </transformation>
+   </transformations>
+  </layer>
+ </layers>
+
+</PropertyList>

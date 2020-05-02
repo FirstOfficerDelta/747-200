@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<!-- Alarm on Terrain :
+
+     - excessive rate of descent below 2500 ft.
+     - excessive closure rate with ground.
+     - gear not locked below 500 ft.
+
+     Cannot move to nasal, because response time must be instantaneous.
+-->
+
+<PropertyList>
+
+  <or>
+   <and>
+    <less-than>
+     <property>position/altitude-agl-ft</property>
+     <value>2500</value>
+    </less-than>
+    <less-than>
+     <property>/instrumentation/inst-vertical-speed-indicator/indicated-speed-fps</property>
+     <value>-50.0</value> <!-- 3000 ft/min (50 s) -->
+    </less-than>
+   </and>
+   <and>
+    <less-than>
+     <property>position/altitude-agl-ft</property>
+     <value>200</value>
+    </less-than>
+    <less-than>
+     <property>/instrumentation/inst-vertical-speed-indicator/indicated-speed-fps</property>
+     <value>-15.0</value> <!-- touch down below 900 ft/min -->
+    </less-than>
+   </and>
+   <and>
+    <less-than>
+     <property>/instrumentation/inst-vertical-speed-indicator/indicated-speed-fps</property>
+     <value>-5.0</value> <!-- not null on taxi -->
+    </less-than>
+    <and>
+     <not-equals>
+      <property>gear/gear[0]/position-norm</property>
+      <value>1.0</value>
+      </not-equals>
+     <less-than>
+      <property>position/altitude-agl-ft</property>
+      <value>500</value>
+     </less-than>
+    </and>
+   </and>
+  </or>
+
+</PropertyList>

@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+
+<!-- Reserve tank -->
+
+<PropertyList>
+
+ <name>Reserve tank</name>
+ <w-base>110</w-base>
+ <h-base>50</h-base>
+
+ <params>
+  <level-select>/consumables/fuel/tank[5]/level-gal_us</level-select>
+  <name>/consumables/fuel/tank[5]/name</name>
+ </params>
+
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-black-knob.rgb</path>
+   </texture>
+    <w>50</w>
+    <h>50</h>
+  </layer>
+
+  <layer>
+   <name>fuel quantity</name>
+   <type>text</type>
+   <point-size>5</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>FUEL QTY</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>fuel display</name>
+   <condition include="747-cond-voltage-inst.xml"/>
+   <type>text</type>
+   <font>led</font>
+   <point-size>4</point-size>
+   <color>
+    <red>1.0</red>
+    <green>0.8</green>
+    <blue>0.7</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/level-select"/>
+     <format>%2.1f</format>
+     <scale>0.001</scale>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-5</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>3</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>No 1</name>
+   <condition>
+    <equals>
+     <property alias="../../../../../params/name"/>
+     <value>R1</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <point-size>6</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>No. 1</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-50</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>2</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>No 4</name>
+   <condition>
+    <equals>
+     <property alias="../../../../../params/name"/>
+     <value>R4</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <point-size>6</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>No. 4</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>35</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>2</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>reserve</name>
+   <condition>
+    <equals>
+     <property alias="../../../../../params/name"/>
+     <value>R1</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <point-size>6</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>RES</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-50</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-8</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>reserve right</name>
+   <condition>
+    <equals>
+     <property alias="../../../../../params/name"/>
+     <value>R4</value>
+    </equals>
+   </condition>
+   <type>text</type>
+   <point-size>6</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>RES</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>35</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-8</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+</PropertyList>

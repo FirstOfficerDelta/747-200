@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+
+<!-- -->
+
+<PropertyList>
+
+ <name>Dial NAV</name>
+ <w-base>150</w-base>
+ <h-base>150</h-base>
+
+ <params>
+  <frq-disp>/instrumentation/nav[0]/frequencies/selected-mhz</frq-disp>
+  <frq-ctrl>/instrumentation/nav[0]/frequencies/selected-mhz</frq-ctrl>
+ </params>
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-black-bg.rgb</path>
+   </texture>
+    <w>75</w>
+    <h>30</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>38</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>button</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-white-led.rgb</path>
+   </texture>
+    <w>30</w>
+    <h>30</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Title</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>VHF NAV</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>61</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>NAV frequency display</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>9</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/frq-disp"/>
+     <format>%3.2f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-21</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>29</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>Minus 1</name>
+   <button>0</button>
+   <x>0</x>
+   <y>-17</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/frq-ctrl"/>
+    <step>-1</step>
+    <min>100</min>
+    <max>130</max>
+    <wrap>130</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 10</name>
+   <button>0</button>
+   <x>0</x>
+   <y>1</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/frq-ctrl"/>
+    <step>1</step>
+    <min>100</min>
+    <max>130</max>
+    <wrap>100</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Minus 0.01</name>
+   <button>0</button>
+   <x>14</x>
+   <y>-17</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/frq-ctrl"/>
+    <step>-0.01</step>
+    <min>100</min>
+    <max>130</max>
+    <wrap>130</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 0.01</name>
+   <button>0</button>
+   <x>14</x>
+   <y>1</y>
+   <w>15</w>
+   <h>15</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/frq-ctrl"/>
+    <step>0.01</step>
+    <min>100</min>
+    <max>130</max>
+    <wrap>100</wrap>
+   </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>

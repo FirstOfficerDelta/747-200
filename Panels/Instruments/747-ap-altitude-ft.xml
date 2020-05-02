@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+
+<!-- Max operating altitude is 45100 ft -->
+
+<PropertyList>
+
+ <name>Dial altitude</name>
+ <w-base>100</w-base>
+ <h-base>150</h-base>
+
+ <params>
+  <tcr-disp>/controls/autoflight/dial-altitude-ft</tcr-disp>
+  <tcr-ctrl>/controls/autoflight/dial-altitude-ft</tcr-ctrl>
+  <alt-auto>/autopilot/settings/target-altitude-ft</alt-auto>
+ </params>
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-black-bg.rgb</path>
+   </texture>
+    <w>80</w>
+    <h>30</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>5</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>34</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>button</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-white-led.rgb</path>
+   </texture>
+    <w>35</w>
+    <h>35</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-3</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-0</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>AP Target Altitude display</name>
+   <type>text</type>
+   <font>led</font>
+   <point-size>10</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>number-value</type>
+     <property alias="../../../../../params/tcr-disp"/>
+     <format>%04.0f</format>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-30</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>25</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Title</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>ALT SEL</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-20</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>60</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>Minus 1000</name>
+   <button>0</button>
+   <x>-18</x>
+   <y>-19</y>
+   <w>16</w>
+   <h>18</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>-1000</step>
+    <min>0</min>
+    <max>45000</max>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+    <condition>
+     <equals>
+      <property>/controls/autoflight/altitude</property>
+      <value>altitude-select</value>
+     </equals>
+    </condition>
+    <command>property-assign</command>
+    <property alias="../../../../params/alt-auto"/>
+    <property n="1" alias="../../../../params/tcr-ctrl"/>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 1000</name>
+   <button>0</button>
+   <x>-18</x>
+   <y>1</y>
+   <w>16</w>
+   <h>18</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>1000</step>
+    <min>0</min>
+    <max>45000</max>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+    <condition>
+     <equals>
+      <property>/controls/autoflight/altitude</property>
+      <value>altitude-select</value>
+     </equals>
+    </condition>
+    <command>property-assign</command>
+    <property alias="../../../../params/alt-auto"/>
+    <property n="1" alias="../../../../params/tcr-ctrl"/>
+   </binding>
+  </action>
+
+  <action>
+   <name>Minus 100</name>
+   <button>0</button>
+   <x>-3</x>
+   <y>-19</y>
+   <w>16</w>
+   <h>18</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>-100</step>
+    <min>0</min>
+    <max>45000</max>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+    <condition>
+     <equals>
+      <property>/controls/autoflight/altitude</property>
+      <value>altitude-select</value>
+     </equals>
+    </condition>
+    <command>property-assign</command>
+    <property alias="../../../../params/alt-auto"/>
+    <property n="1" alias="../../../../params/tcr-ctrl"/>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 100</name>
+   <button>0</button>
+   <x>-3</x>
+   <y>1</y>
+   <w>16</w>
+   <h>18</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>100</step>
+    <min>0</min>
+    <max>45000</max>
+    <wrap>0</wrap>
+   </binding>
+   <binding>
+    <condition>
+     <equals>
+      <property>/controls/autoflight/altitude</property>
+      <value>altitude-select</value>
+     </equals>
+    </condition>
+    <command>property-assign</command>
+    <property alias="../../../../params/alt-auto"/>
+    <property n="1" alias="../../../../params/tcr-ctrl"/>
+   </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>

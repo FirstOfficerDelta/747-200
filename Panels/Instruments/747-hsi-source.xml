@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+
+<!-- HSI source -->
+
+<PropertyList>
+
+ <name>HSI source</name>
+ <w-base>60</w-base>
+ <h-base>80</h-base>
+
+
+ <layers>
+
+  <layer>
+   <name>HSI switch</name>
+   <type>switch</type>
+   <layer>
+    <condition>
+     <property>/instrumentation/hsi/ins-source</property>
+    </condition>
+    <name>off</name>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/switches.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.0</y1>
+     <x2>0.25</x2>
+     <y2>0.31</y2>
+    </texture>
+    <w>40</w>
+    <h>47</h>
+   </layer>
+   <layer>
+    <name>on</name>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/switches.rgb</path>
+     <x1>0.0</x1>
+     <y1>0.74</y1>
+     <x2>0.25</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>40</w>
+    <h>40</h>
+    <transformations>
+     <transformation>
+      <type>y-shift</type>
+      <offset>2.75</offset>
+     </transformation>
+    </transformations>
+   </layer>
+  </layer>
+
+  <layer>
+   <name>Title on</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>VOR/ILS</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-27</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>30</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Title off</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>INS</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-10</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-35</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>Toggle source</name>
+   <button>0</button>
+   <x>-21</x>
+   <y>-21</y>
+   <w>42</w>
+   <h>42</h>
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/hsi/ins-source</property>
+   </binding>
+   <binding>
+    <command>property-toggle</command>
+    <property>/instrumentation/generic/click</property>
+   </binding>
+  </action>
+
+ </actions>
+ 
+</PropertyList>

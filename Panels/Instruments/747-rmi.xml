@@ -1,0 +1,688 @@
+<?xml version="1.0"?>
+
+<!-- VOR Radio Magnetic Indicator :
+
+     - 2 DME frequencies displayed at the same time (no knob).
+     - Flightgear NAV is always true heading (towards the real antenna);
+       while compass may be either magnetic or true. 
+-->
+
+<PropertyList>
+ <name>VOR RMI</name>
+ <w-base>128</w-base>
+ <h-base>192</h-base>
+
+ <params>
+  <voltage>/systems/electrical/outputs/bus</voltage>
+ </params>
+
+
+ <layers>
+
+<!-- DME -->
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-black-bg.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.0</y1>
+    <x2>0.25</x2>
+    <y2>0.095</y2>
+   </texture>
+   <w>120</w>
+   <h>155</h>
+   <transformations>
+    <transformation>
+     <type>y-shift</type>
+     <offset>15</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- DME 1 -->
+
+  <layer>
+   <name>DME 1</name>
+   <type>switch</type>
+   <condition>
+    <greater-than>
+     <property>/systems/electrical/outputs/bus</property>
+     <value>20.0</value>
+    </greater-than>
+   </condition>
+
+   <layer>
+    <name>DME 1 in range</name>
+    <type>switch</type>
+    <condition>
+     <property>/instrumentation/dme[0]/in-range</property>
+    </condition>
+
+    <layer>
+     <name>DME 1 display</name>
+     <type>text</type>
+     <condition>
+      <less-than-equals>
+       <property>/instrumentation/dme[0]/indicated-distance-nm</property>
+       <value type="double">999.9</value>
+      </less-than-equals>
+     </condition>
+     <font>led</font>
+     <point-size>7</point-size>
+     <color>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+     </color>
+     <chunks>
+      <chunk>
+       <type>number-value</type>
+       <property>/instrumentation/dme[0]/indicated-distance-nm</property>
+       <format>%5.1f</format>
+      </chunk>
+     </chunks>
+    </layer>
+
+    <layer>
+     <name>DME 1 overflow</name>
+     <type>text</type>
+     <font>led</font>
+     <point-size>7</point-size>
+     <color>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+     </color>
+     <chunks>
+      <chunk>
+       <type>literal</type>
+       <text>999.9</text>
+      </chunk>
+     </chunks>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>DME 1 not in range</name>
+    <type>text</type>
+    <condition>
+     <not>
+      <property>/instrumentation/dme[0]/in-range</property>
+     </not>
+    </condition>
+    <font>led</font>
+    <point-size>7</point-size>
+    <color>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+    </color>
+    <chunks>
+     <chunk>
+      <type>literal</type>
+      <text>---.-</text>
+     </chunk>
+    </chunks>
+   </layer>
+
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-57</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>70</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+
+<!-- DME 2 -->
+
+  <layer>
+   <name>DME 2</name>
+   <type>switch</type>
+   <condition>
+    <greater-than>
+     <property>/systems/electrical/outputs/bus</property>
+     <value>20.0</value>
+    </greater-than>
+   </condition>
+
+   <layer>
+    <name>DME 2 in range</name>
+    <type>switch</type>
+    <condition>
+     <property>/instrumentation/dme[1]/in-range</property>
+    </condition>
+
+    <layer>
+     <name>DME 2 display</name>
+     <type>text</type>
+     <condition>
+      <less-than-equals>
+       <property>/instrumentation/dme[1]/indicated-distance-nm</property>
+       <value type="double">999.9</value>
+      </less-than-equals>
+     </condition>
+     <font>led</font>
+     <point-size>7</point-size>
+     <color>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+     </color>
+     <chunks>
+      <chunk>
+       <type>number-value</type>
+       <property>/instrumentation/dme[1]/indicated-distance-nm</property>
+       <format>%5.1f</format>
+      </chunk>
+     </chunks>
+    </layer>
+
+    <layer>
+     <name>DME 2 overflow</name>
+     <type>text</type>
+     <font>led</font>
+     <point-size>7</point-size>
+     <color>
+      <red>1.0</red>
+      <green>1.0</green>
+      <blue>1.0</blue>
+     </color>
+     <chunks>
+      <chunk>
+       <type>literal</type>
+       <text>999.9</text>
+      </chunk>
+     </chunks>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>DME 2 not in range</name>
+    <type>text</type>
+    <condition>
+     <not>
+      <property>/instrumentation/dme[1]/in-range</property>
+     </not>
+    </condition>
+    <font>led</font>
+    <point-size>7</point-size>
+    <color>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+    </color>
+    <chunks>
+     <chunk>
+      <type>literal</type>
+      <text>---.-</text>
+     </chunk>
+    </chunks>
+   </layer>
+
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>14</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>70</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- VOR -->
+
+  <layer>
+   <name>gauge face</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/faces-1.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.51</y1>
+    <x2>0.49</x2>
+    <y2>1.0</y2>
+   </texture>
+    <w>104</w>
+    <h>104</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>1</offset>
+    </transformation>
+    <transformation>
+     <type>rotation</type>
+     <property>/orientation/heading-magnetic-deg</property>
+     <min>0.0</min>
+     <max>360.0</max>
+     <scale>-1.0</scale>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>OFF flag</name>
+   <condition>
+    <less-than-equals>
+     <property alias="../../../../../params/voltage"/>
+     <value>20.0</value>
+    </less-than-equals>
+   </condition>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.9375</x1>
+    <y1>0.5</y1>
+    <x2>1.0</x2>
+    <y2>0.546875</y2>
+   </texture>
+   <w>25</w>
+   <h>10</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-5</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>41</offset>
+    </transformation>
+    <transformation>
+     <type>rotation</type>
+     <offset>-45</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>NAV 1 title</name>
+   <w>50</w>
+   <h>18</h>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0</x1>
+    <y1>0.05</y1>
+    <x2>0.25</x2>
+    <y2>0.1125</y2>
+   </texture>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-3</offset>
+    </transformation> 
+    <transformation>
+     <type>y-shift</type>
+     <offset>-3</offset>
+    </transformation> 
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>NAV 1 number</name>
+   <type>text</type>
+   <point-size>16</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>1</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-9</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-13</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>NAV 2 title</name>
+   <w>50</w>
+   <h>18</h>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0</x1>
+    <y1>0.05</y1>
+    <x2>0.25</x2>
+    <y2>0.1125</y2>
+   </texture>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>25</offset>
+    </transformation> 
+    <transformation>
+     <type>y-shift</type>
+     <offset>-3</offset>
+    </transformation> 
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>NAV 2 number</name>
+   <type>text</type>
+   <point-size>14</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>2</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>22</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-13</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- OFF FLAGS -->
+
+  <layer>
+   <name>OFF 1 flag</name>
+   <condition>
+    <not>
+     <property>/instrumentation/nav[0]/in-range</property>
+    </not>
+   </condition>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.9375</x1>
+    <y1>0.50</y1>
+    <x2>1.0</x2>
+    <y2>0.546875</y2>
+   </texture>
+   <w>16</w>
+   <h>10</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-14</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-18</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>OFF 2 flag</name>
+   <condition>
+    <not>
+     <property>/instrumentation/nav[1]/in-range</property>
+    </not>
+   </condition>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+    <x1>0.9375</x1>
+    <y1>0.5</y1>
+    <x2>1.0</x2>
+    <y2>0.546875</y2>
+   </texture>
+   <w>16</w>
+   <h>10</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-18</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+<!-- VOR 1 -->
+
+  <layer>
+   <name>Needle VOR 1</name>
+   <type>switch</type>
+
+   <layer>
+    <name>Needle VOR 1 in range</name>
+    <condition>
+     <property>/instrumentation/nav[0]/in-range</property>
+    </condition>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+     <x1>0.8671875</x1>
+     <y1>0.25</y1>
+     <x2>0.921875</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>9</w>
+    <h>64</h>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property>/instrumentation/nav[0]/heading-deg</property>
+      <min>-360</min>
+      <max>360</max>
+     </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property>/orientation/heading-deg</property>
+      <min>0.0</min>
+      <max>360.0</max>
+      <scale>-1.0</scale>
+     </transformation>
+     <transformation>
+      <type>x-shift</type>
+      <offset>-1</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+
+   <layer>
+    <name>Needle VOR 1 out of range</name>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+     <x1>0.8671875</x1>
+     <y1>0.25</y1>
+     <x2>0.921875</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>9</w>
+    <h>64</h>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <offset>-90</offset> <!-- horizontal left -->
+     </transformation>
+     <transformation>
+      <type>x-shift</type>
+      <offset>-1</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+  </layer>
+
+<!-- VOR 2 -->
+
+  <layer>
+   <name>Needle VOR 2</name>
+   <type>switch</type>
+
+   <layer>
+    <name>Needle VOR 2 in range</name>
+    <condition>
+     <property>/instrumentation/nav[1]/in-range</property>
+    </condition>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+     <x1>0.8671875</x1>
+     <y1>0.25</y1>
+     <x2>0.921875</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>9</w>
+    <h>64</h>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property>/instrumentation/nav[1]/heading-deg</property>
+      <min>-360</min>
+      <max>360</max>
+     </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property>/orientation/heading-deg</property>
+      <min>0.0</min>
+      <max>360.0</max>
+      <scale>-1.0</scale>
+     </transformation>
+     <transformation>
+      <type>x-shift</type>
+      <offset>-1</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+
+   <layer>
+    <name>Needle VOR 2 out of range</name>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/misc-1.rgb</path>
+     <x1>0.8671875</x1>
+     <y1>0.25</y1>
+     <x2>0.921875</x2>
+     <y2>1.0</y2>
+    </texture>
+    <w>6</w>
+    <h>64</h>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <offset>90</offset> <!-- horizontal right -->
+     </transformation>
+     <transformation>
+      <type>x-shift</type>
+      <offset>-1</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+  </layer>
+
+<!-- VOR 2 tip -->
+
+  <layer>
+   <name>Needle tip VOR 2</name>
+   <type>switch</type>
+
+   <layer>
+    <name>Needle tip VOR 2 in range</name>
+    <condition>
+     <property>/instrumentation/nav[1]/in-range</property>
+    </condition>
+    <w>16</w>
+    <h>16</h>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/hsi2.rgb</path>
+     <x1>0.8465625</x1>
+     <x2>0.948125</x2>
+     <y1>0.449375</y1>
+     <y2>0.5375</y2>
+    </texture>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <property>/instrumentation/nav[1]/heading-deg</property>
+      <min>-360</min>
+      <max>360</max>
+     </transformation>
+     <transformation>
+      <type>rotation</type>
+      <property>/orientation/heading-deg</property>
+      <min>0.0</min>
+      <max>360.0</max>
+      <scale>-1.0</scale>
+     </transformation>
+     <transformation>
+      <type>rotation</type>
+      <offset>180</offset>
+     </transformation>
+     <transformation>
+      <type>y-shift</type>
+      <offset>-23</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+
+   <layer>
+    <name>Needle tip VOR 2 out of range</name>
+    <w>16</w>
+    <h>16</h>
+    <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/hsi2.rgb</path>
+     <x1>0.8465625</x1>
+     <x2>0.948125</x2>
+     <y1>0.449375</y1>
+     <y2>0.5375</y2>
+    </texture>
+    <transformations>
+     <transformation>
+      <type>rotation</type>
+      <offset>90</offset> <!-- horizontal right -->
+     </transformation>
+     <transformation>
+      <type>rotation</type>
+      <offset>180</offset>
+     </transformation>
+     <transformation>
+      <type>y-shift</type>
+      <offset>-23</offset>
+     </transformation> 
+    </transformations>
+   </layer>
+  </layer>
+
+  <layer>
+   <name>glare shield</name>
+   <texture>
+     <path>Aircraft/747-200/Panels/Instruments/Textures/bezel1.rgb</path>
+     <x1>0.5</x1>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
+     <y2>0.5</y2>
+   </texture>
+   <w>124</w>
+   <h>124</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>2</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>-2</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+</PropertyList>
+

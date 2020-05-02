@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- 747-200 flaps limit.
+-->
+
+<PropertyList>
+
+ <name>Flaps limit</name>
+ <w-base>128</w-base>
+ <h-base>64</h-base>
+
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-limit.rgb</path>
+    <x1>0.0</x1>
+    <y1>0.6</y1>
+    <x2>0.8</x2>
+    <y2>1.0</y2>
+   </texture>
+   <w>128</w>
+   <h>64</h>
+  </layer>
+
+ </layers>
+
+</PropertyList>

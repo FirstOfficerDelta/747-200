@@ -1,0 +1,171 @@
+<?xml version="1.0"?>
+
+<!-- Vertical Speed toothed wheel :
+
+-->
+
+<PropertyList>
+
+ <name>Vertical speed whell</name>
+ <w-base>50</w-base>
+ <h-base>200</h-base>
+
+ <params>
+  <tcr-ctrl>/autopilot/settings/vertical-speed-fpm</tcr-ctrl>
+ </params>
+
+
+ <layers>
+
+  <layer>
+   <name>background</name>
+   <texture>
+    <path>Aircraft/747-200/Panels/Instruments/Textures/747-black-bg.rgb</path>
+    <x1>0.43</x1>
+    <y1>0.0</y1>
+    <x2>0.57</x2>
+    <y2>1.0</y2>
+   </texture>
+    <w>20</w>
+    <h>60</h>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>7</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>23</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Title</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>VERT</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-10</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>85</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+  <layer>
+   <name>Title line 2</name>
+   <type>text</type>
+   <point-size>12</point-size>
+   <color>
+    <red>1.0</red>
+    <green>1.0</green>
+    <blue>1.0</blue>
+   </color>
+   <chunks>
+    <chunk>
+     <type>literal</type>
+     <text>SPEED</text>
+    </chunk>
+   </chunks>
+   <transformations>
+    <transformation>
+     <type>x-shift</type>
+     <offset>-15</offset>
+    </transformation>
+    <transformation>
+     <type>y-shift</type>
+     <offset>70</offset>
+    </transformation>
+   </transformations>
+  </layer>
+
+ </layers>
+
+ <actions>
+
+  <action>
+   <name>Minus 100</name>
+   <button>0</button>
+   <x>-7</x>
+   <y>-5</y>
+   <w>13</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>-100</step>
+    <min>-6000</min>
+    <max>6000</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Minus 10</name>
+   <button>0</button>
+   <x>8</x>
+   <y>-5</y>
+   <w>13</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>-10</step>
+    <min>-6000</min>
+    <max>6000</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 100</name>
+   <button>0</button>
+   <x>-7</x>
+   <y>25</y>
+   <w>13</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>100</step>
+    <min>-6000</min>
+    <max>6000</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+  <action>
+   <name>Plus 10</name>
+   <button>0</button>
+   <x>8</x>
+   <y>25</y>
+   <w>13</w>
+   <h>25</h>
+   <binding>
+    <command>property-adjust</command>
+    <property alias="../../../../params/tcr-ctrl"/>
+    <step>10</step>
+    <min>-6000</min>
+    <max>6000</max>
+    <wrap>0</wrap>
+   </binding>
+  </action>
+
+ </actions>
+
+</PropertyList>

@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<!-- Alarm on terrain :
+
+     - excessive rate of descent below 2500 ft.
+     - excessive closure rate with ground.
+     - gear not locked below 500 ft.
+-->
+
+<PropertyList>
+ <name>Alarm on terrain</name>
+ <w-base>104</w-base>
+ <h-base>26</h-base>
+
+
+ <layers>
+<!-- translucent lens -->  
+  <layer>
+   <name>Alarm light</name>
+   <type>switch</type>
+
+   <layer>
+    <name>off</name>
+    <type>group</type>
+    <condition>
+     <or>
+      <not include="747-cond-voltage-inst.xml"/>
+      <not>
+       <property>/systems/warning/red/pull-up</property>
+      </not>
+     </or>
+    </condition>
+
+    <layer include="747-bulb-off.xml">
+     <w>104</w>
+     <h>26</h>
+    </layer>
+
+    <layer>
+     <name>Background off</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-red-pull-up.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>104</w>
+     <h>26</h>
+    </layer>
+   </layer>
+
+   <layer>
+    <name>on</name>
+    <type>group</type>
+
+    <layer include="747-bulb-on.xml">
+     <w>104</w>
+     <h>26</h>
+    </layer>
+
+    <layer>
+     <name>Background on</name>
+     <texture>
+      <path>Aircraft/747-200/Panels/Instruments/Textures/747-red-pull-up.rgb</path>
+      <x1>0.0</x1>
+      <y1>0.25</y1>
+      <x2>1.0</x2>
+      <y2>0.75</y2>
+     </texture>
+     <w>104</w>
+     <h>26</h>
+     <emissive>true</emissive>
+    </layer>
+   </layer>
+  </layer>
+
+ </layers>
+
+</PropertyList>
