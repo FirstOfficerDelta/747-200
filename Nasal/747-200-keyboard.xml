@@ -120,22 +120,6 @@
     </binding>
    </key>
 
-   <key n="22">
-    <name>Ctrl-V</name>
-    <desc>Select initial view (view 0).</desc>
-    <binding>
-     <command>nasal</command>
-     <script>globals.Boeing747.seatsystem.viewexport("captain");</script>
-    </binding>
-    <mod-shift>
-     <desc>Restore view pitch</desc>
-     <binding>
-      <command>nasal</command>
-      <script>globals.Boeing747.seatsystem.restorepitchexport();</script>
-     </binding>
-    </mod-shift>
-   </key>
-
    <key n="23">
     <name>Ctrl-W</name>
     <desc>Toggle autopilot wing-lever (disabled).</desc>
@@ -145,70 +129,12 @@
     </binding>
    </key>
 
-   <key n="24">
-    <name>Ctrl-X</name>
-    <mod-shift>
-     <desc>Restore floating view</desc>
-     <binding>
-      <command>nasal</command>
-      <script>globals.Boeing747.seatsystem.restoreexport();</script>
-     </binding>
-    </mod-shift>
-   </key>
-
    <key n="61">
     <name>=</name>
     <desc>Menu</desc>
     <binding>
      <command>dialog-show</command>
      <dialog-name>747-200-menu</dialog-name>
-    </binding>
-   </key>
-
-   <key n="86">
-    <name>V</name>
-    <desc>Scroll in reverse through views.</desc>
-    <binding>
-     <command>nasal</command>
-     <script>globals.Boeing747.seatsystem.scrollreverseexport();</script>
-    </binding>
-   </key>
-
-   <key n="106">
-    <name>j</name>
-    <desc>Decrease spoilers.</desc>
-    <binding>
-     <command>nasal</command>
-     <script>globals.Boeing747.flightsystem.spoilersexport(-1)</script>
-    </binding>
-   </key>
-
-   <key n="107">
-    <name>k</name>
-    <desc>Increase spoilers.</desc>
-    <binding>
-     <command>nasal</command>
-     <script>globals.Boeing747.flightsystem.spoilersexport(1)</script>
-    </binding>
-   </key>
-
-   <key n="113">
-    <name>q</name>
-    <desc>reset speed-up.</desc>
-    <binding>
-     <command>property-assign</command>
-     <property>/sim/speed-up</property>
-     <value>1</value>
-    </binding>
-   </key>
-
-   <key n="118">
-    <name>v</name>
-    <desc>Cycle view</desc>
-    <desc>Scroll through views.</desc>
-    <binding>
-     <command>nasal</command>
-     <script>globals.Boeing747.seatsystem.scrollexport();</script>
     </binding>
    </key>
 
@@ -339,15 +265,6 @@
     <binding>
      <command>nasal</command>
      <script>globals.Boeing747.seatsystem.swapexport();</script>
-    </binding>
-   </key>
-
-   <key n="268">
-    <name>F12</name>
-    <desc>Radio dialog.</desc>
-    <binding>
-     <command>dialog-show</command>
-     <dialog-name>747-200-radios</dialog-name>
     </binding>
    </key>
 
